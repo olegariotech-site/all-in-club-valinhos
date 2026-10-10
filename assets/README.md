@@ -1,10 +1,10 @@
-# Assets da homepage
+# Arquivos visuais da homepage
 
-Coloque aqui os dois arquivos:
+Arquivos confirmados na branch `preview-v1`:
 
-- allin-hero.mp4
-- allin-poster.jpg
+- `allin-hero.mp4`: vídeo cinematográfico otimizado do combo (8 segundos, 1080p, ~1,1 MB).
+- `allin-poster.jpg`: quadro final do vídeo para servir de capa.
 
-O vídeo original do Veo foi recebido na conversa da OT e compactado em uma versão leve. A branch contém só código-texto até que esses arquivos sejam enviados separadamente.
+A página `index.html` referencia ambos em caminhos relativos. Para testar, baixe o ZIP completo do repositório, extraia e abra `index.html` no navegador.
 
-**Importante:** Todo material e branding é conceitual; confirmar direitos e autorização antes de divulgação pública.
+**Estado:** demonstração privada, sem publicação. Todo material de marca, produtos e comunicação deve ser aprovado pelo proprietário antes da divulgação externa.
