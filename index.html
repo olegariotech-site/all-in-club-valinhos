@@ -41,9 +41,9 @@
     .nav-cta:hover,.btn:hover{transform:translateY(-2px)}
     .menu-btn{display:none;background:transparent;border:1px solid var(--line);border-radius:12px;color:#fff;padding:10px}
     .hero{position:relative;min-height:min(810px,95svh);min-height:810px;isolation:isolate;display:flex;align-items:center;overflow:hidden;background:#060707}
-    .hero-media{position:absolute;inset:0;z-index:-3;overflow:hidden}
-    .hero video{width:100%;height:100%;object-fit:cover;object-position:66% 50%;background:radial-gradient(circle at 70% 45%,#40301e 0%,#070707 67%);}
-    .hero-visual-fallback{position:absolute;inset:0;background:radial-gradient(circle at 76% 55%,rgba(163,100,18,.45),transparent 45%),linear-gradient(115deg,#060606,#26190c)}
+    .hero-media{position:absolute;inset:0;z-index:-3;overflow:hidden;isolation:isolate;background:radial-gradient(circle at 70% 45%,#40301e 0%,#070707 67%)}
+    .hero video{position:absolute;inset:0;z-index:1;display:block;width:100%;height:100%;object-fit:cover;object-position:66% 50%;background:transparent;}
+    .hero-visual-fallback{position:absolute;inset:0;z-index:0;pointer-events:none;background:radial-gradient(circle at 76% 55%,rgba(163,100,18,.45),transparent 45%),linear-gradient(115deg,#060606,#26190c)}
     .hero-visual-fallback::after{content:"";position:absolute;right:14%;top:34%;width:260px;aspect-ratio:1;background:radial-gradient(circle,#ffc32522,transparent 70%);filter:blur(26px)}
     .hero-shade{position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,#060707 4%,rgba(6,7,7,.98) 20%,rgba(6,7,7,.74) 42%,rgba(6,7,7,.08) 78%),linear-gradient(0deg,#080909 0%,transparent 22%,rgba(0,0,0,.2) 100%)}
     .hero-content{position:relative;padding-top:164px;padding-bottom:120px}
