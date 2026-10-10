@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080909">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="description" content="Conceito de website premium para All In Club Valinhos: hamburgueria, dogueria, cardápio digital e delivery. Prévia da Olegario Tech.">
+  <title>All In Club Valinhos | Conceito Olegario Tech</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--ink:#080909;--panel:#111313;--panel2:#171a1a;--line:rgba(255,255,255,.14);--cream:#f5f3e9;--muted:#a5a9a5;--yellow:#ffdb24;--yellow2:#ffe75c;--radius:22px;--max:1250px}
+    *,*::before,*::after{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:92px}
+    body{margin:0;background:var(--ink);color:var(--cream);font-family:"DM Sans",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+    body::selection{background:var(--yellow);color:#000}
+    a{color:inherit;text-decoration:none}
+    button{font:inherit;cursor:pointer}
+    img,svg,video{display:block;max-width:100%}
+    .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+    .skip{position:absolute;z-index:99;left:12px;top:-80px;background:var(--yellow);color:#000;padding:12px 16px}
+    .skip:focus{top:12px}
+    :focus-visible{outline:3px solid var(--yellow);outline-offset:4px}
+    .shell{width:min(calc(100% - 52px),var(--max));margin-inline:auto}
+    .eyebrow{font-size:11px;line-height:1.4;font-weight:800;letter-spacing:.22em;text-transform:uppercase}
+    .concept-strip{height:32px;display:flex;align-items:center;justify-content:center;background:var(--yellow);color:#141414;font-weight:800;font-size:10px;letter-spacing:.18em;text-align:center;padding-inline:12px}
+    .header{height:84px;position:absolute;top:32px;inset-inline:0;z-index:40;border-bottom:1px solid rgba(255,255,255,.13)}
+    .header-inner{height:100%;display:flex;align-items:center;gap:35px}
+    .brand{display:inline-flex;align-items:center;gap:12px;flex-shrink:0}
+    .brand-emblem{width:58px;height:58px;display:grid;place-content:center;text-align:center;background:var(--yellow);color:#121212;border:3px double #151515;outline:2px solid var(--yellow);border-radius:50%;transform:rotate(-12deg);box-shadow:0 0 0 5px #000;line-height:.86;font-family:"Barlow Condensed",Impact,sans-serif;font-weight:900;font-size:16px}
+    .brand-emblem small{font:900 8px/1.2 "DM Sans",sans-serif;letter-spacing:.14em;margin-top:4px}
+    .brand-name{display:grid;line-height:1;font:900 25px/1 "Barlow Condensed",Impact,sans-serif;letter-spacing:.035em}
+    .brand-name span{color:var(--yellow);font-size:12px;letter-spacing:.14em;margin-top:5px;font-family:"DM Sans",sans-serif}
+    .nav{display:flex;align-items:center;justify-content:center;gap:34px;flex:1}
+    .nav a{font-size:12px;text-transform:uppercase;font-weight:800;letter-spacing:.09em;transition:color .2s}
+    .nav a:hover{color:var(--yellow)}
+    .nav-cta,.btn{display:inline-flex;gap:10px;align-items:center;justify-content:center;border-radius:999px;border:1px solid transparent;font-weight:800;transition:transform .22s,background .22s,border-color .22s;white-space:nowrap}
+    .nav-cta{padding:15px 22px;background:var(--yellow);color:#111;font-size:12px;text-transform:uppercase;letter-spacing:.075em}
+    .nav-cta:hover,.btn:hover{transform:translateY(-2px)}
+    .menu-btn{display:none;background:transparent;border:1px solid var(--line);border-radius:12px;color:#fff;padding:10px}
+    .hero{position:relative;min-height:min(810px,95svh);min-height:810px;isolation:isolate;display:flex;align-items:center;overflow:hidden;background:#060707}
+    .hero-media{position:absolute;inset:0;z-index:-3;overflow:hidden}
+    .hero video{width:100%;height:100%;object-fit:cover;object-position:66% 50%;background:radial-gradient(circle at 70% 45%,#40301e 0%,#070707 67%);}
+    .hero-visual-fallback{position:absolute;inset:0;background:radial-gradient(circle at 76% 55%,rgba(163,100,18,.45),transparent 45%),linear-gradient(115deg,#060606,#26190c)}
+    .hero-visual-fallback::after{content:"";position:absolute;right:14%;top:34%;width:260px;aspect-ratio:1;background:radial-gradient(circle,#ffc32522,transparent 70%);filter:blur(26px)}
+    .hero-shade{position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,#060707 4%,rgba(6,7,7,.98) 20%,rgba(6,7,7,.74) 42%,rgba(6,7,7,.08) 78%),linear-gradient(0deg,#080909 0%,transparent 22%,rgba(0,0,0,.2) 100%)}
+    .hero-content{position:relative;padding-top:164px;padding-bottom:120px}
+    .hero-copy{max-width:610px}
+    .hero .eyebrow{color:var(--yellow);display:flex;align-items:center;gap:12px}
+    .hero .eyebrow::before{content:"";width:26px;height:2px;background:currentColor}
+    h1,h2,h3,p{margin-top:0}
+    h1,h2,h3{font-family:"Barlow Condensed",Impact,"Arial Narrow",sans-serif}
+    h1{font-size:clamp(78px,10vw,154px);line-height:.78;font-weight:900;letter-spacing:-.028em;margin:32px 0 34px;text-transform:uppercase}
+    h1 strong{color:var(--yellow);font-weight:900}
+    .hero-sub{font-size:clamp(17px,1.65vw,21px);color:#d9d9d4;line-height:1.65;max-width:430px;margin-bottom:31px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{min-height:56px;padding:0 25px;font-size:13px;letter-spacing:.04em}
+    .btn.primary{background:var(--yellow);color:#0d0d0b}
+    .btn.primary:hover{background:var(--yellow2)}
+    .btn.outline{background:rgba(11,11,11,.45);border-color:rgba(255,255,255,.33);color:#fff}
+    .btn.outline:hover{border-color:var(--yellow)}
+    .btn-arrow{font-size:20px;line-height:1}
+    .hero-bottom{position:absolute;bottom:38px;left:0;right:0;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .hero-stats{display:flex;gap:23px;flex-wrap:wrap}
+    .hero-stat{display:flex;gap:11px;align-items:center;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#e4e4dd}
+    .hero-stat .symbol{color:var(--yellow);font-size:22px}
+    .scroll-note{display:flex;align-items:center;gap:12px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#ddd}
+    .scroll-note::after{content:"↓";font-size:24px;color:var(--yellow)}
+    .replay{position:absolute;right:35px;bottom:132px;z-index:5;border-radius:999px;border:1px solid #ffffff66;background:#090909a6;color:white;padding:10px 15px;font-weight:700;font-size:11px;backdrop-filter:blur(10px)}
+    .replay[hidden]{display:none}
+    .yellow-tape{background:var(--yellow);color:#111;overflow:hidden;padding:13px 0;transform:skewY(-1deg);position:relative;z-index:2;margin-top:-2px}
+    .tape-inner{width:max-content;display:flex;gap:24px;align-items:center;animation:marquee 32s linear infinite}
+    .tape-inner span{font:900 18px/1 "Barlow Condensed",sans-serif;letter-spacing:.07em}
+    .tape-inner b{font-size:18px}
+    @keyframes marquee{to{transform:translateX(-50%)}}
+    .section{padding-block:112px}
+    .section-head{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:34px}
+    .section-head .eyebrow{color:var(--yellow)}
+    h2{font-weight:900;font-size:clamp(50px,6.4vw,91px);line-height:.9;letter-spacing:-.012em;text-transform:uppercase;margin:13px 0 0}
+    h2 em{font-style:normal;color:var(--yellow)}
+    .section-intro{max-width:340px;color:var(--muted);font-size:14px;line-height:1.7;margin:0}
+    .grid-food{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .food-card{position:relative;overflow:hidden;min-height:430px;border:1px solid var(--line);border-radius:var(--radius);display:flex;flex-direction:column;justify-content:space-between;padding:28px;background:var(--panel);transition:transform .32s,border-color .32s;isolation:isolate}
+    .food-card:hover{transform:translateY(-8px);border-color:#ffdb2480}
+    .food-card::before{content:"";position:absolute;inset:0;z-index:-2;background:radial-gradient(circle at 50% 34%,var(--glow),transparent 62%),linear-gradient(160deg,#24221b 0%,#101111 70%)}
+    .food-card::after{content:"";z-index:-1;position:absolute;inset:0;background:linear-gradient(0deg,#0a0a0a 0%,transparent 63%)}
+    .food-number{display:inline-flex;align-items:center;justify-content:center;border:1px solid #ffffff6b;border-radius:100%;width:37px;height:37px;font-size:11px;font-weight:700}
+    .food-art{align-self:center;filter:drop-shadow(0 22px 24px #0009);font-size:clamp(120px,13vw,180px);line-height:1;transform:rotate(-10deg);transition:transform .35s;user-select:none}
+    .food-card:hover .food-art{transform:rotate(-4deg) scale(1.07)}
+    .food-card h3{font-size:clamp(38px,3.9vw,53px);line-height:.9;text-transform:uppercase;letter-spacing:.01em;margin-bottom:8px}
+    .food-card p{color:#d1d2c9;font-size:13px;margin:0;line-height:1.5;max-width:210px}
+    .food-end{display:flex;align-items:end;justify-content:space-between}
+    .round-arrow{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:var(--yellow);color:#111;font-size:22px}
+    .section.alt{background:#111313}
+    .ordering-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .ordering-title{display:flex;flex-direction:column;justify-content:space-between;border:1px solid var(--line);border-radius:var(--radius);padding:44px;min-height:480px;background:radial-gradient(circle at 88% 95%,#2f2b13,transparent 60%),#0b0d0d}
+    .ordering-title h2{font-size:clamp(55px,6.8vw,95px)}
+    .ordering-title p{max-width:330px;font-size:15px;color:#bfc0b8;line-height:1.7;margin:0}
+    .channels{display:flex;flex-direction:column;gap:13px}
+    .channel{position:relative;display:flex;align-items:center;gap:18px;flex:1;padding:25px 30px;background:#1b1e1e;border:1px solid #ffffff16;border-radius:18px;transition:border-color .2s,transform .2s}
+    .channel:hover{border-color:var(--yellow);transform:translateX(4px)}
+    .channel-icon{height:62px;width:62px;flex-shrink:0;display:grid;place-items:center;border-radius:17px;color:#111;background:var(--yellow);font-size:28px}
+    .channel:nth-child(2) .channel-icon{background:#ef293c;color:white}
+    .channel:nth-child(3) .channel-icon{background:#10b961;color:white}
+    .channel h3{font-size:27px;margin:0;text-transform:uppercase;letter-spacing:.01em}
+    .channel small{display:block;font-size:12px;color:#b6b9b2;margin-top:5px}
+    .channel-arrow{margin-left:auto;color:var(--yellow);font-size:28px}
+    .story{display:grid;grid-template-columns:.9fr 1.1fr;gap:50px;align-items:center}
+    .story-art{position:relative;min-height:420px;border-radius:var(--radius);border:1px solid #ffffff25;background:radial-gradient(circle at 55% 52%,#f8cc2436,transparent 40%),repeating-linear-gradient(135deg,#181919,#181919 16px,#1c1e1e 16px,#1c1e1e 32px);display:grid;place-items:center;overflow:hidden}
+    .story-art::after{content:"ALL IN";font-family:"Barlow Condensed",Impact,sans-serif;font-size:clamp(100px,15vw,210px);font-weight:900;letter-spacing:-.06em;color:#ffdb2414;position:absolute;bottom:-25px;white-space:nowrap}
+    .story-badge{z-index:1;border:4px solid #121212;border-radius:50%;background:var(--yellow);outline:2px solid var(--yellow);width:250px;height:250px;transform:rotate(-11deg);display:flex;flex-direction:column;align-items:center;justify-content:center;color:#111;box-shadow:0 25px 80px #0008;text-align:center;font:900 56px/.82 "Barlow Condensed",Impact,sans-serif}
+    .story-badge small{font:800 11px/1.3 "DM Sans",sans-serif;letter-spacing:.12em;margin-top:18px}
+    .story-copy .eyebrow{color:var(--yellow)}
+    .story-copy h2{font-size:clamp(64px,7.3vw,104px);margin-bottom:25px}
+    .story-copy p{font-size:16px;line-height:1.8;color:#b9bcb5;max-width:540px}
+    .story-copy .btn{margin-top:15px}
+    .visit{background:var(--yellow);color:#111;overflow:hidden}
+    .visit .eyebrow{color:#3d390d}
+    .visit-inner{display:flex;justify-content:space-between;align-items:center;gap:35px}
+    .visit h2{font-size:clamp(60px,8vw,118px)}
+    .visit p{font-size:15px;line-height:1.75;font-weight:600}
+    .visit .btn{background:#0b0b0b;color:var(--yellow)}
+    .visit-label{font:900 18px/1 "Barlow Condensed",sans-serif;letter-spacing:.06em;text-align:right;transform:rotate(-7deg);border:2px solid #151515;border-radius:50%;padding:40px;flex-shrink:0}
+    .insta-section{display:flex;justify-content:space-between;align-items:center;gap:30px;padding-block:72px}
+    .insta-section h2{font-size:clamp(40px,5.6vw,72px)}
+    .insta-section h2 span{color:var(--yellow)}
+    .footer{background:#050606;border-top:1px solid var(--line);padding:45px 0 35px}
+    .footer-inner{display:flex;justify-content:space-between;align-items:flex-start;gap:30px}
+    .footer-copy{font-size:12px;line-height:1.7;color:#898d87;max-width:380px}
+    .footer a:hover{text-decoration:underline}
+    .footer-links{display:flex;gap:24px;flex-wrap:wrap;font-size:12px;font-weight:700}
+    .footer-meta{border-top:1px solid var(--line);margin-top:30px;padding-top:20px;display:flex;justify-content:space-between;gap:20px;font-size:10px;color:#838980;line-height:1.6}
+    .mobile-order{display:none}
+    @media(max-width:1000px){.nav{gap:17px}.nav-cta{padding:14px}.hero{min-height:730px}.food-card{min-height:370px}.food-art{font-size:135px}.ordering-title{padding:30px}.section{padding-block:88px}}
+    @media(max-width:760px){
+      .shell{width:min(calc(100% - 32px),var(--max))}
+      .concept-strip{font-size:9px;letter-spacing:.12em}
+      .header{height:74px}
+      .header-inner{justify-content:space-between}
+      .brand-emblem{width:47px;height:47px;font-size:13px}
+      .brand-name{font-size:22px}
+      .nav-cta{display:none}
+      .menu-btn{display:flex}
+      .nav{display:none;position:absolute;top:74px;left:16px;right:16px;background:#101211;border:1px solid var(--line);border-radius:14px;padding:22px;flex-direction:column;align-items:flex-start;box-shadow:0 16px 25px #000a}
+      .nav.open{display:flex}
+      .hero{min-height:900px;align-items:flex-end}
+      .hero video{object-position:55% 14%}
+      .hero-shade{background:linear-gradient(0deg,#080909 5%,rgba(8,9,9,.95) 24%,rgba(8,9,9,.55) 51%,rgba(8,9,9,.06) 78%),linear-gradient(180deg,#0006,transparent 20%)}
+      .hero-content{padding-top:420px;padding-bottom:158px}
+      .hero-copy{max-width:560px}
+      h1{font-size:clamp(76px,13vw,112px);margin:20px 0 22px}
+      .hero-sub{font-size:16px;margin-bottom:20px;max-width:330px}
+      .hero-actions .btn{min-height:50px;padding:0 20px;font-size:12px}
+      .hero-bottom{bottom:80px}
+      .scroll-note{display:none}
+      .hero-stats{gap:13px}.hero-stat{font-size:9px}.hero-stat .symbol{font-size:19px}
+      .replay{right:17px;bottom:auto;top:145px}
+      .section{padding-block:75px}
+      .section-head{display:block}.section-intro{margin-top:18px}
+      .grid-food{grid-template-columns:1fr;gap:12px}
+      .food-card{min-height:290px;padding:25px;flex-direction:row;align-items:stretch}
+      .food-card .food-number{align-self:flex-start}
+      .food-art{position:absolute;right:20px;top:30px;font-size:145px;opacity:.85}
+      .food-end{align-self:flex-end;width:100%;position:absolute;bottom:24px;left:24px;padding-right:48px}
+      .food-card h3{font-size:47px}
+      .food-card p{font-size:12px}
+      .ordering-grid,.story{grid-template-columns:1fr}
+      .ordering-title{min-height:320px}
+      .story{gap:35px}.story-art{min-height:310px}.story-badge{width:190px;height:190px;font-size:45px}
+      .visit-inner{align-items:flex-start}.visit-label{display:none}
+      .insta-section{display:block}.insta-section .btn{margin-top:24px}
+      .footer-inner,.footer-meta{flex-direction:column}
+      .mobile-order{display:flex;position:fixed;z-index:39;bottom:10px;left:12px;right:12px;background:var(--yellow);color:#111;min-height:54px;border-radius:999px;align-items:center;justify-content:center;font-weight:900;font-size:13px;letter-spacing:.04em;box-shadow:0 12px 30px #0009}
+      .footer{padding-bottom:95px}
+    }
+    @media(max-width:420px){
+      .hero{min-height:840px}.hero-content{padding-top:380px}
+      h1{font-size:clamp(68px,18vw,84px)}
+      .hero-stats{gap:10px}.hero-stat{letter-spacing:0}
+      .hero-stat:nth-child(3){display:none}
+      .food-card{min-height:280px}.food-art{font-size:130px;right:8px;top:40px}
+      .channel{padding:20px 17px}.channel-icon{height:50px;width:50px}.channel h3{font-size:23px}
+    }
+    @media(prefers-reduced-motion:reduce){
+      *,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}
+    }
+  </style>
+</head>
+<body>
+  <a href="#conteudo" class="skip">Pular para o conteúdo</a>
+  <div class="concept-strip">PROPOSTA VISUAL NÃO OFICIAL &nbsp;•&nbsp; OLEGARIO TECH &nbsp;•&nbsp; PRÉVIA COMERCIAL</div>
+  <header class="header">
+    <div class="shell header-inner">
+      <a href="#inicio" class="brand" aria-label="All In Club — voltar ao início">
+        <span class="brand-emblem" aria-hidden="true">ALL IN<small>CLUB</small></span>
+        <span class="brand-name">ALL IN CLUB <span>HAMBURGUERIA &amp; DOGUERIA</span></span>
+      </a>
+      <nav id="nav" class="nav" aria-label="Navegação principal">
+        <a href="#inicio">Início</a><a href="#favoritos">Cardápio</a><a href="#pedidos">Peça agora</a><a href="#sobre">Sobre</a><a href="#contato">Contato</a>
+      </nav>
+      <a class="nav-cta" href="https://allinclube.saipos.com/home" target="_blank" rel="noopener noreferrer">Fazer pedido <span aria-hidden="true">↗</span></a>
+      <button class="menu-btn" id="menuButton" type="button" aria-label="Abrir menu" aria-controls="nav" aria-expanded="false">☰</button>
+    </div>
+  </header>
+  <main id="conteudo">
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <div class="hero-media" aria-hidden="true">
+        <div class="hero-visual-fallback"></div>
+        <video id="heroVideo" autoplay muted playsinline preload="metadata" poster="assets/allin-poster.jpg" aria-label="Vídeo conceitual com um hambúrguer sendo montado e finalizado com batatas e refrigerante">
+          <source src="assets/allin-hero.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="hero-shade" aria-hidden="true"></div>
+      <button id="replayVideo" class="replay" type="button" hidden>↻ Rever o vídeo</button>
+      <div class="shell hero-content">
+        <div class="hero-copy">
+          <p class="eyebrow">Valinhos • SP / Hambúrgueres &amp; dogs</p>
+          <h1 id="hero-title">O SABOR<br>É <strong>ALL IN.</strong></h1>
+          <p class="hero-sub">Seu próximo lanche começa aqui. Escolha o que bateu vontade e faça seu pedido do seu jeito.</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="https://allinclube.saipos.com/home" target="_blank" rel="noopener noreferrer">Ver cardápio <span class="btn-arrow" aria-hidden="true">↗</span></a>
+            <a class="btn outline" href="https://wa.me/5519992666989?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20All%20In%20Club%20e%20gostaria%20de%20fazer%20um%20pedido." target="_blank" rel="noopener noreferrer">Pedir no WhatsApp <span class="btn-arrow" aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+        <div class="hero-bottom">
+          <div class="hero-stats">
+            <span class="hero-stat"><span class="symbol" aria-hidden="true">✳</span> Hamburgueria</span>
+            <span class="hero-stat"><span class="symbol" aria-hidden="true">✳</span> Dogueria</span>
+            <span class="hero-stat"><span class="symbol" aria-hidden="true">✳</span> Delivery &amp; retirada</span>
+          </div>
+          <span class="scroll-note">Explore o sabor</span>
+        </div>
+      </div>
+    </section>
+    <div class="yellow-tape" aria-hidden="true"><div class="tape-inner">
+      <span>ALL IN CLUB</span><b>★</b><span>BURGERS</span><b>★</b><span>DOGS</span><b>★</b><span>COMBOS</span><b>★</b><span>VALINHOS</span><b>★</b>
+      <span>ALL IN CLUB</span><b>★</b><span>BURGERS</span><b>★</b><span>DOGS</span><b>★</b><span>COMBOS</span><b>★</b><span>VALINHOS</span><b>★</b>
+    </div></div>
+    <section class="section shell" id="favoritos" aria-labelledby="food-title">
+      <div class="section-head"><div><p class="eyebrow">Seu próximo pedido começa aqui</p><h2 id="food-title">TEM PRA<br><em>TODA FOME.</em></h2></div><p class="section-intro">Burger, dog ou combo? Descubra as opções disponíveis no cardápio oficial e peça sem complicação.</p></div>
+      <div class="grid-food">
+        <a class="food-card" href="https://allinclube.saipos.com/home" target="_blank" rel="noopener noreferrer" style="--glow:#bf641f6b" aria-label="Ver hambúrgueres no cardápio digital">
+          <span class="food-number">01</span><span class="food-art" aria-hidden="true">🍔</span><div class="food-end"><div><h3>BURGERS</h3><p>Escolha seu próximo favorito.</p></div><span class="round-arrow" aria-hidden="true">↗</span></div>
+        </a>
+        <a class="food-card" href="https://allinclube.saipos.com/home" target="_blank" rel="noopener noreferrer" style="--glow:#d7a84055" aria-label="Ver hot dogs no cardápio digital">
+          <span class="food-number">02</span><span class="food-art" aria-hidden="true">🌭</span><div class="food-end"><div><h3>DOGS</h3><p>Tem vontade de dog? É aqui.</p></div><span class="round-arrow" aria-hidden="true">↗</span></div>
+        </a>
+        <a class="food-card" href="https://allinclube.saipos.com/home" target="_blank" rel="noopener noreferrer" style="--glow:#d19f1755" aria-label="Ver combos no cardápio digital">
+          <span class="food-number">03</span><span class="food-art" aria-hidden="true">🍟</span><div class="food-end"><div><h3>COMBOS</h3><p>Veja as combinações do cardápio.</p></div><span class="round-arrow" aria-hidden="true">↗</span></div>
+        </a>
+      </div>
+      <p style="color:var(--muted);font-size:11px;margin-top:18px">Elementos gráficos ilustrativos nesta demonstração. Fotos, nomes de produtos e ofertas serão validados com o estabelecimento.</p>
+    </section>
+    <section class="section alt" id="pedidos" aria-labelledby="order-title">
+      <div class="shell ordering-grid">
+        <div class="ordering-title"><div><p class="eyebrow" style="color:var(--yellow)">Seu pedido, sua escolha</p><h2 id="order-title">BATEU<br>A <span style="color:var(--yellow)">FOME?</span><br>BORA.</h2></div><p>Reunimos os caminhos para você pedir do jeito mais prático. Sem substituir os canais que a All In Club já utiliza.</p></div>
+        <div class="channels">
+          <a class="channel" href="https://allinclube.saipos.com/home" target="_blank" rel="noopener noreferrer"><span class="channel-icon" aria-hidden="true">☰</span><span><h3>Cardápio digital</h3><small>Conheça as opções e peça online.</small></span><span class="channel-arrow" aria-hidden="true">↗</span></a>
+          <a class="channel" href="https://www.ifood.com.br/delivery/valinhos-sp/all-in-club-hamburgueria-jardim-sao-luiz" target="_blank" rel="noopener noreferrer"><span class="channel-icon" aria-hidden="true">iF</span><span><h3>Pedir no iFood</h3><small>Acesse o perfil da hamburgueria.</small></span><span class="channel-arrow" aria-hidden="true">↗</span></a>
+          <a class="channel" href="https://wa.me/5519992666989?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20All%20In%20Club%20e%20gostaria%20de%20fazer%20um%20pedido." target="_blank" rel="noopener noreferrer"><span class="channel-icon" aria-hidden="true">✆</span><span><h3>WhatsApp</h3><small>Fale diretamente com a equipe.</small></span><span class="channel-arrow" aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+    <section class="section shell story" id="sobre" aria-labelledby="story-title">
+      <div class="story-art" aria-hidden="true"><div class="story-badge">ALL<br>IN<br>CLUB<small>VALINHOS • SP</small></div></div>
+      <div class="story-copy">
+        <p class="eyebrow">A identidade entra em cena</p>
+        <h2 id="story-title">TUDO OU<br><span style="color:var(--yellow)">NADA.</span><br>ALL IN.</h2>
+        <p>Uma proposta digital para aproximar a marca de quem está com fome: visual marcante, apresentação clara e acesso direto ao pedido.</p>
+        <p>Na versão oficial, este espaço poderá contar a história real da All In Club, mostrar o ambiente e destacar o que o proprietário considera mais importante.</p>
+        <a class="btn outline" href="https://www.instagram.com/allin.club_valinhos/" target="_blank" rel="noopener noreferrer">Conheça o Instagram <span class="btn-arrow" aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+    <section class="section visit" id="contato" aria-labelledby="visit-title">
+      <div class="shell visit-inner">
+        <div><p class="eyebrow">Estamos em Valinhos</p><h2 id="visit-title">COLA<br>NA <span style="-webkit-text-stroke:2px #111;color:transparent">ALL IN.</span></h2>
+        <p>Rua Ângelo Dalanegra, 319<br>Jardim São Luiz · Valinhos, SP</p>
+        <a class="btn" href="https://maps.app.goo.gl/zZRdNen1wt4B3zmK8" target="_blank" rel="noopener noreferrer">Como chegar <span class="btn-arrow" aria-hidden="true">↗</span></a></div>
+        <div class="visit-label" aria-hidden="true">É EM<br>VALINHOS!<br>↘</div>
+      </div>
+    </section>
+    <section class="shell insta-section" aria-label="Redes sociais">
+      <div><p class="eyebrow" style="color:var(--yellow)">Acompanhe as novidades</p><h2>SEGUE A <span>ALL IN.</span></h2></div>
+      <a class="btn outline" href="https://www.instagram.com/allin.club_valinhos/" target="_blank" rel="noopener noreferrer">@allin.club_valinhos <span class="btn-arrow" aria-hidden="true">↗</span></a>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="shell">
+      <div class="footer-inner">
+        <div><a href="#inicio" class="brand"><span class="brand-emblem" aria-hidden="true">ALL IN<small>CLUB</small></span><span class="brand-name">ALL IN CLUB<span>HAMBURGUERIA &amp; DOGUERIA</span></span></a><p class="footer-copy" style="margin-top:25px">Conceito visual independente desenvolvido pela Olegario Tech para apresentação comercial. Não é o website oficial da All In Club. Marcas e características dos produtos estão sujeitas à aprovação do estabelecimento.</p></div>
+        <div class="footer-links"><a href="#favoritos">Cardápio</a><a href="#pedidos">Fazer pedido</a><a href="https://maps.app.goo.gl/zZRdNen1wt4B3zmK8" target="_blank" rel="noopener noreferrer">Localização</a><a href="https://www.instagram.com/allin.club_valinhos/" target="_blank" rel="noopener noreferrer">Instagram</a></div>
+      </div>
+      <div class="footer-meta"><span>ALL IN CLUB VALINHOS · PROJETO CONCEITUAL</span><span>Prévia comercial por OLEGARIO TECH® · Não publicado como site oficial</span></div>
+    </div>
+  </footer>
+  <a class="mobile-order" href="https://allinclube.saipos.com/home" target="_blank" rel="noopener noreferrer">FAZER MEU PEDIDO&nbsp; ↗</a>
+  <script>
+    (() => {
+      const menuButton = document.getElementById('menuButton');
+      const nav = document.getElementById('nav');
+      menuButton.addEventListener('click', () => {
+        const open = nav.classList.toggle('open');
+        menuButton.setAttribute('aria-expanded', String(open));
+        menuButton.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+      });
+      nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+        nav.classList.remove('open');
+        menuButton.setAttribute('aria-expanded', 'false');
+        menuButton.setAttribute('aria-label', 'Abrir menu');
+      }));
+      const video = document.getElementById('heroVideo');
+      const replay = document.getElementById('replayVideo');
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+      if (reduceMotion.matches) {
+        video.removeAttribute('autoplay');
+        video.pause();
+      } else {
+        video.play().catch(() => {});
+      }
+      video.addEventListener('ended', () => {
+        // Keep final combo frame visible; no abrupt restart.
+        video.pause();
+        replay.hidden = false;
+      });
+      replay.addEventListener('click', () => {
+        replay.hidden = true;
+        video.currentTime = 0;
+        video.play().catch(() => { replay.hidden = false; });
+      });
+    })();
+  </script>
+</body>
+</html>
