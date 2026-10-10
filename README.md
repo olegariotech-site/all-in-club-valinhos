@@ -9,27 +9,27 @@
 - Conteúdo comercial, fotos e identidade devem ser aprovados pelo proprietário antes de qualquer lançamento.
 
 ## Site
-Página estática sem dependências de build: abra \`index.html\` no navegador ou execute um servidor HTTP local.
+Página estática sem dependências de build: abra `index.html` no navegador ou execute um servidor HTTP local.
 
 - Hero preparado para o vídeo Veo de 8 s (inicia sem som, pausa no quadro final e permite replay).
 - Responsive desktop / tablet / mobile.
 - Compatibilidade com redução de movimento, skip link, foco visível e navegação mobile.
 - Links externos de Saipos, iFood, WhatsApp com texto de origem, Maps e Instagram.
-- Selo de **conceito não oficial**, \`noindex\` e \`robots.txt\` restritivo.
+- Selo de **conceito não oficial**, `noindex` e `robots.txt` restritivo.
 
-## Arquivos de vídeo necessários
-Estes são ativos binários e **ainda devem ser enviados ao GitHub** separadamente:
+## Arquivos de vídeo integrados
+Os dois arquivos foram enviados e confirmados na branch `preview-v1`:
 
-- \`assets/allin-hero.mp4\` — vídeo Veo otimizado para web (8 s, 1920×1080, cerca de 1,1 MB).
-- \`assets/allin-poster.jpg\` — capa extraída do quadro final.
+- `assets/allin-hero.mp4` — vídeo Veo otimizado para web (8 s, 1920×1080, cerca de 1,1 MB).
+- `assets/allin-poster.jpg` — capa extraída do quadro final.
 
-O HTML já aponta para esses arquivos. Não use um servidor de produção para testar sem eles; o fundo degradê servirá como fallback.
+O HTML aponta para esses arquivos. É possível testar localmente abrindo `index.html` após baixar e extrair o repositório. O vídeo é reproduzido uma vez e pausa na cena final do combo, com opção de replay. A publicação continua desativada.
 
 ## Verificações antes de uma futura publicação
 1. Validar logo oficial, lanches reais, ingredientes, fotos, copy, horário e direitos de uso.
 2. Confirmar links e canais com o proprietário.
 3. Auditar mobile, desktop, vídeo, acessibilidade e performance.
-4. Retirar a tarja de prévia, o aviso não oficial e \`noindex\` **somente com aprovação**.
+4. Retirar a tarja de prévia, o aviso não oficial e `noindex` **somente com aprovação**.
 5. Configurar domínio e deploy apenas após autorização explícita.
 
 ## Links de referência
