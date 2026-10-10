@@ -20,7 +20,7 @@ Página estática sem dependências de build: abra \`index.html\` no navegador o
 ## Arquivos de vídeo necessários
 Estes são ativos binários e **ainda devem ser enviados ao GitHub** separadamente:
 
-- \`assets/allin-hero.mp4\` — vídeo Veo otimizado para web (8 s, 1280×720).
+- \`assets/allin-hero.mp4\` — vídeo Veo otimizado para web (8 s, 1920×1080, cerca de 1,1 MB).
 - \`assets/allin-poster.jpg\` — capa extraída do quadro final.
 
 O HTML já aponta para esses arquivos. Não use um servidor de produção para testar sem eles; o fundo degradê servirá como fallback.
