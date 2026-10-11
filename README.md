@@ -38,3 +38,22 @@ O HTML aponta para esses arquivos. É possível testar localmente abrindo `index
 - Linktree: https://linktr.ee/allinclubvalinhos
 - WhatsApp: https://wa.me/5519992666989
 - iFood: https://www.ifood.com.br/delivery/valinhos-sp/all-in-club-hamburgueria-jardim-sao-luiz
+
+## Vitrine premium de produtos — 12 itens
+
+A seção `#favoritos` utiliza uma curadoria de produtos reais identificados em imagens do cardápio fornecidas para o projeto. **Não é um catálogo sincronizado com a Saipos**.
+
+- **Burgers (5):** La Paz, Santiago, Toronto, Madri e Lisboa.
+- **Hot dogs (3):** Egito, Uruguai e Jamaica.
+- **Combos (3):** individual Santiago, individual Toronto e casal Montevidéu.
+- **Promoções (1):** Buenos Aires Burger.
+
+Recursos: filtros por categoria, seis cards na visão inicial, opção de mostrar mais, apresentação responsiva e CTAs direcionados para `https://allinclube.saipos.com/home`. Não há preço fixo na vitrine para evitar divergências com o cardápio operacional.
+
+### Foto-mosaico (pendente de upload no GitHub)
+
+A vitrine depende de **um único arquivo binário**, `assets/allin-produtos-vitrine.webp` (cerca de 138 KB), preparado a partir das miniaturas das capturas fornecidas. Como a resolução das miniaturas é baixa, serve **somente para apresentação prévia**.
+
+**Atenção:** O arquivo ainda precisa ser colocado na pasta `assets/` da branch `preview-v1`. Sem ele, os cards mostram apenas fundos escuros. Após enviar o arquivo, baixe novamente o ZIP da branch para visualizar.
+
+Os combos mostram fotografias do hambúrguer principal, não o conjunto completo. Para lançamento oficial, solicitar fotografias em alta resolução, autorização de uso e aprovação dos nomes, ingredientes e seleção pelo proprietário. Não anunciar como “mais vendidos” sem dados reais.
