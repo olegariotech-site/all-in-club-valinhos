@@ -29,8 +29,7 @@
     .header{height:84px;position:absolute;top:32px;inset-inline:0;z-index:40;border-bottom:1px solid rgba(255,255,255,.13)}
     .header-inner{height:100%;display:flex;align-items:center;gap:35px}
     .brand{display:inline-flex;align-items:center;gap:12px;flex-shrink:0}
-    .brand-emblem{width:58px;height:58px;display:grid;place-content:center;text-align:center;background:var(--yellow);color:#121212;border:3px double #151515;outline:2px solid var(--yellow);border-radius:50%;transform:rotate(-12deg);box-shadow:0 0 0 5px #000;line-height:.86;font-family:"Barlow Condensed",Impact,sans-serif;font-weight:900;font-size:16px}
-    .brand-emblem small{font:900 8px/1.2 "DM Sans",sans-serif;letter-spacing:.14em;margin-top:4px}
+    .brand-logo{width:58px;height:58px;display:block;flex-shrink:0;border-radius:50%;object-fit:cover;filter:drop-shadow(0 0 10px rgba(255,219,36,.24));}
     .brand-name{display:grid;line-height:1;font:900 25px/1 "Barlow Condensed",Impact,sans-serif;letter-spacing:.035em}
     .brand-name span{color:var(--yellow);font-size:12px;letter-spacing:.14em;margin-top:5px;font-family:"DM Sans",sans-serif}
     .nav{display:flex;align-items:center;justify-content:center;gap:34px;flex:1}
@@ -139,7 +138,7 @@
       .concept-strip{font-size:9px;letter-spacing:.12em}
       .header{height:74px}
       .header-inner{justify-content:space-between}
-      .brand-emblem{width:47px;height:47px;font-size:13px}
+      .brand-logo{width:47px;height:47px}
       .brand-name{font-size:22px}
       .nav-cta{display:none}
       .menu-btn{display:flex}
@@ -194,7 +193,7 @@
   <header class="header">
     <div class="shell header-inner">
       <a href="#inicio" class="brand" aria-label="All In Club — voltar ao início">
-        <span class="brand-emblem" aria-hidden="true">ALL IN<small>CLUB</small></span>
+        <img class="brand-logo" src="assets/allin-logo-premium.png" alt="" width="58" height="58" decoding="async" loading="eager">
         <span class="brand-name">ALL IN CLUB <span>HAMBURGUERIA &amp; DOGUERIA</span></span>
       </a>
       <nav id="nav" class="nav" aria-label="Navegação principal">
@@ -289,7 +288,7 @@
   <footer class="footer">
     <div class="shell">
       <div class="footer-inner">
-        <div><a href="#inicio" class="brand"><span class="brand-emblem" aria-hidden="true">ALL IN<small>CLUB</small></span><span class="brand-name">ALL IN CLUB<span>HAMBURGUERIA &amp; DOGUERIA</span></span></a><p class="footer-copy" style="margin-top:25px">Conceito visual independente desenvolvido pela Olegario Tech para apresentação comercial. Não é o website oficial da All In Club. Marcas e características dos produtos estão sujeitas à aprovação do estabelecimento.</p></div>
+        <div><a href="#inicio" class="brand"><img class="brand-logo" src="assets/allin-logo-premium.png" alt="" width="58" height="58" decoding="async" loading="lazy"><span class="brand-name">ALL IN CLUB<span>HAMBURGUERIA &amp; DOGUERIA</span></span></a><p class="footer-copy" style="margin-top:25px">Conceito visual independente desenvolvido pela Olegario Tech para apresentação comercial. Não é o website oficial da All In Club. Marcas e características dos produtos estão sujeitas à aprovação do estabelecimento.</p></div>
         <div class="footer-links"><a href="#favoritos">Cardápio</a><a href="#pedidos">Fazer pedido</a><a href="https://maps.app.goo.gl/zZRdNen1wt4B3zmK8" target="_blank" rel="noopener noreferrer">Localização</a><a href="https://www.instagram.com/allin.club_valinhos/" target="_blank" rel="noopener noreferrer">Instagram</a></div>
       </div>
       <div class="footer-meta"><span>ALL IN CLUB VALINHOS · PROJETO CONCEITUAL</span><span>Prévia comercial por OLEGARIO TECH® · Não publicado como site oficial</span></div>
