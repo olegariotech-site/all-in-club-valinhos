@@ -96,6 +96,38 @@
     .food-card p{color:#d1d2c9;font-size:13px;margin:0;line-height:1.5;max-width:210px}
     .food-end{display:flex;align-items:end;justify-content:space-between}
     .round-arrow{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:var(--yellow);color:#111;font-size:22px}
+
+    /* Vitrine editorial: fotos de produtos reais extraídas do cardápio enviado para estudo. */
+    .curated-head{align-items:end;margin-bottom:30px}
+    .curated-head h2{font-size:clamp(55px,6.5vw,95px)}
+    .gallery-controls{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin:0 0 22px}
+    .gallery-filters{display:flex;flex-wrap:wrap;gap:8px}
+    .gallery-filter{min-height:43px;display:inline-flex;align-items:center;gap:9px;border:1px solid #ffffff33;background:#151717;color:#ddd;cursor:pointer;padding:11px 17px;border-radius:999px;font-size:12px;font-weight:800;transition:background .2s,border-color .2s,transform .2s}
+    .gallery-filter:hover{border-color:var(--yellow);transform:translateY(-2px)}
+    .gallery-filter.active,.gallery-filter[aria-pressed="true"]{background:var(--yellow);color:#141414;border-color:var(--yellow)}
+    .gallery-filter span{opacity:.58;font-size:10px}
+    .gallery-counter{font-size:11px;font-weight:700;letter-spacing:.04em;color:var(--muted)}
+    .featured-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+    .featured-card{display:flex;flex-direction:column;overflow:hidden;min-width:0;border-radius:20px;border:1px solid rgba(255,255,255,.14);background:#141616;position:relative;transition:transform .3s,border-color .3s,box-shadow .3s}
+    .featured-card[hidden]{display:none!important}
+    .featured-card:hover{transform:translateY(-7px);border-color:rgba(255,219,36,.62);box-shadow:0 18px 38px rgba(0,0,0,.32)}
+    .featured-photo{height:230px;position:relative;display:block;flex-shrink:0;overflow:hidden;background-color:#2b2116;background-image:linear-gradient(0deg,rgba(5,5,5,.14),transparent 40%),url('assets/allin-produtos-vitrine.webp');background-size:cover,400% 300%;background-position:center,var(--x) var(--y);background-repeat:no-repeat;transition:filter .3s;isolation:isolate}
+    .featured-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(5,5,5,.55),transparent 30%);pointer-events:none}
+    .featured-card:hover .featured-photo{filter:saturate(1.14)}
+    .photo-index{position:absolute;z-index:1;left:16px;top:16px;display:grid;place-content:center;color:var(--yellow);background:#080909bd;border:1px solid rgba(255,219,36,.55);font-weight:800;font-size:11px;width:37px;height:37px;border-radius:50%}
+    .photo-note{position:absolute;z-index:1;bottom:12px;right:12px;color:#fff;max-width:70%;text-align:right;background:#080909cd;border-radius:6px;padding:5px 8px;font-size:10px}
+    .featured-details{display:flex;flex:1;flex-direction:column;gap:12px;padding:21px 22px 24px}
+    .featured-pill{align-self:flex-start;text-transform:uppercase;letter-spacing:.11em;color:var(--yellow);font-size:10px;font-weight:800}
+    .featured-name{font:900 clamp(31px,3vw,43px)/.95 "Barlow Condensed",Impact,sans-serif;text-transform:uppercase;color:#f6f4ea}
+    .featured-description{font-size:12px;line-height:1.65;color:#b7bcb5;min-height:58px}
+    .featured-link{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:12px;border-top:1px solid rgba(255,255,255,.12);padding-top:15px;color:#ffe140;font-size:11px;font-weight:800;letter-spacing:.03em}
+    .featured-link span{font-size:24px;line-height:1}
+    .gallery-actions{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:34px;flex-wrap:wrap}
+    .gallery-more[hidden]{display:none!important}
+    .gallery-disclaimer{max-width:900px;color:#929991;font-size:11px;line-height:1.65;margin:24px 0 0}
+    @media(max-width:1000px){.featured-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.featured-photo{height:240px}}
+    @media(max-width:760px){.gallery-controls{align-items:flex-start;flex-direction:column}.gallery-filters{flex-wrap:nowrap;width:100%;overflow-x:auto;padding:0 0 9px;scrollbar-width:thin}.gallery-filter{flex-shrink:0}.featured-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.featured-details{padding:15px;gap:10px}.featured-photo{height:170px}.featured-name{font-size:32px}.featured-description{font-size:11px;min-height:84px}.gallery-actions .btn{flex:1;min-width:210px}}
+    @media(max-width:520px){.featured-grid{grid-template-columns:1fr}.featured-photo{height:220px}.featured-details{padding:20px}.featured-description{min-height:0}.featured-name{font-size:40px}}
     .section.alt{background:#111313}
     .ordering-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
     .ordering-title{display:flex;flex-direction:column;justify-content:space-between;border:1px solid var(--line);border-radius:var(--radius);padding:44px;min-height:480px;background:radial-gradient(circle at 88% 95%,#2f2b13,transparent 60%),#0b0d0d}
@@ -246,19 +278,39 @@
       <span>ALL IN CLUB</span><b>★</b><span>BURGERS</span><b>★</b><span>DOGS</span><b>★</b><span>COMBOS</span><b>★</b><span>VALINHOS</span><b>★</b>
     </div></div>
     <section class="section shell" id="favoritos" aria-labelledby="food-title">
-      <div class="section-head"><div><p class="eyebrow">Seu próximo pedido começa aqui</p><h2 id="food-title">TEM PRA<br><em>TODA FOME.</em></h2></div><p class="section-intro">Burger, dog ou combo? Descubra as opções disponíveis no cardápio oficial e peça sem complicação.</p></div>
-      <div class="grid-food">
-        <a class="food-card" href="https://allinclube.saipos.com/home" target="_blank" rel="noopener noreferrer" style="--glow:#bf641f6b" aria-label="Ver hambúrgueres no cardápio digital">
-          <span class="food-number">01</span><span class="food-art" aria-hidden="true">🍔</span><div class="food-end"><div><h3>BURGERS</h3><p>Escolha seu próximo favorito.</p></div><span class="round-arrow" aria-hidden="true">↗</span></div>
-        </a>
-        <a class="food-card" href="https://allinclube.saipos.com/home" target="_blank" rel="noopener noreferrer" style="--glow:#d7a84055" aria-label="Ver hot dogs no cardápio digital">
-          <span class="food-number">02</span><span class="food-art" aria-hidden="true">🌭</span><div class="food-end"><div><h3>DOGS</h3><p>Tem vontade de dog? É aqui.</p></div><span class="round-arrow" aria-hidden="true">↗</span></div>
-        </a>
-        <a class="food-card" href="https://allinclube.saipos.com/home" target="_blank" rel="noopener noreferrer" style="--glow:#d19f1755" aria-label="Ver combos no cardápio digital">
-          <span class="food-number">03</span><span class="food-art" aria-hidden="true">🍟</span><div class="food-end"><div><h3>COMBOS</h3><p>Veja as combinações do cardápio.</p></div><span class="round-arrow" aria-hidden="true">↗</span></div>
-        </a>
+      <div class="section-head curated-head">
+        <div><p class="eyebrow">Vitrine All In Club · Produtos do cardápio real</p><h2 id="food-title">UMA VIAGEM<br><em>DE SABORES.</em></h2></div>
+        <p class="section-intro">Dos burgers artesanais aos hot dogs caprichados: descubra o seu próximo favorito e peça diretamente pelo cardápio da casa.</p>
       </div>
-      <p style="color:var(--muted);font-size:11px;margin-top:18px">Elementos gráficos ilustrativos nesta demonstração. Fotos, nomes de produtos e ofertas serão validados com o estabelecimento.</p>
+      <div class="gallery-controls">
+        <div class="gallery-filters" role="group" aria-label="Filtrar produtos por categoria">
+          <button class="gallery-filter active" type="button" data-filter="all" aria-pressed="true">Todos <span>12</span></button>
+          <button class="gallery-filter" type="button" data-filter="burgers" aria-pressed="false">Burgers <span>05</span></button>
+          <button class="gallery-filter" type="button" data-filter="dogs" aria-pressed="false">Hot dogs <span>03</span></button>
+          <button class="gallery-filter" type="button" data-filter="combos" aria-pressed="false">Combos <span>03</span></button>
+          <button class="gallery-filter" type="button" data-filter="promos" aria-pressed="false">Promoções <span>01</span></button>
+        </div>
+        <span class="gallery-counter" id="galleryCounter" role="status" aria-live="polite">12 produtos selecionados</span>
+      </div>
+      <div class="featured-grid" id="featuredGrid">
+        <a class="featured-card" data-category="burgers" href="https://allinclube.saipos.com/home" target="_blank" rel="noopener noreferrer" aria-label="Ver La Paz no cardápio oficial da All In Club"><span class="featured-photo" style="--x:0%;--y:0%" aria-hidden="true"><span class="photo-index">01</span></span><span class="featured-details"><span class="featured-pill">Burger artesanal</span><span class="featured-name">La Paz</span><span class="featured-description">Brioche, burger de 180 g, cheddar, bacon e cream cheese com toque de alface.</span><span class="featured-link">Ver no cardápio oficial <span aria-hidden="true">↗</span></span></span></a>
+        <a class="featured-card" data-category="burgers" href="https://allinclube.saipos.com/home" target="_blank" rel="noopener noreferrer" aria-label="Ver Santiago no cardápio oficial da All In Club"><span class="featured-photo" style="--x:33.333%;--y:0%" aria-hidden="true"><span class="photo-index">02</span></span><span class="featured-details"><span class="featured-pill">Burger artesanal</span><span class="featured-name">Santiago</span><span class="featured-description">Brioche, burger de 180 g, cheddar, bacon, rúcula e maionese de azeitona roxa.</span><span class="featured-link">Ver no cardápio oficial <span aria-hidden="true">↗</span></span></span></a>
+        <a class="featured-card" data-category="burgers" href="https://allinclube.saipos.com/home" target="_blank" rel="noopener noreferrer" aria-label="Ver Toronto no cardápio oficial da All In Club"><span class="featured-photo" style="--x:66.667%;--y:0%" aria-hidden="true"><span class="photo-index">03</span></span><span class="featured-details"><span class="featured-pill">Burger artesanal</span><span class="featured-name">Toronto</span><span class="featured-description">Brioche, burger de 180 g, cheddar, catupiry cremoso e bacon em cubos.</span><span class="featured-link">Ver no cardápio oficial <span aria-hidden="true">↗</span></span></span></a>
+        <a class="featured-card" data-category="burgers" href="https://allinclube.saipos.com/home" target="_blank" rel="noopener noreferrer" aria-label="Ver Madri no cardápio oficial da All In Club"><span class="featured-photo" style="--x:100%;--y:0%" aria-hidden="true"><span class="photo-index">04</span></span><span class="featured-details"><span class="featured-pill">Burger artesanal</span><span class="featured-name">Madri</span><span class="featured-description">Brioche, burger de 180 g, cheddar, alface, tomate, cebola roxa e picles.</span><span class="featured-link">Ver no cardápio oficial <span aria-hidden="true">↗</span></span></span></a>
+        <a class="featured-card" data-category="burgers" href="https://allinclube.saipos.com/home" target="_blank" rel="noopener noreferrer" aria-label="Ver Lisboa no cardápio oficial da All In Club"><span class="featured-photo" style="--x:0%;--y:50%" aria-hidden="true"><span class="photo-index">05</span></span><span class="featured-details"><span class="featured-pill">Burger artesanal</span><span class="featured-name">Lisboa</span><span class="featured-description">Brioche, burger de 180 g, cheddar, bacon, catupiry e molho barbecue.</span><span class="featured-link">Ver no cardápio oficial <span aria-hidden="true">↗</span></span></span></a>
+        <a class="featured-card" data-category="dogs" href="https://allinclube.saipos.com/home" target="_blank" rel="noopener noreferrer" aria-label="Ver Egito no cardápio oficial da All In Club"><span class="featured-photo" style="--x:33.333%;--y:50%" aria-hidden="true"><span class="photo-index">06</span></span><span class="featured-details"><span class="featured-pill">Hot dog</span><span class="featured-name">Egito</span><span class="featured-description">Duas salsichas, milho, vinagrete, purê temperado e batata palha.</span><span class="featured-link">Ver no cardápio oficial <span aria-hidden="true">↗</span></span></span></a>
+        <a class="featured-card" data-category="dogs" href="https://allinclube.saipos.com/home" target="_blank" rel="noopener noreferrer" aria-label="Ver Uruguai no cardápio oficial da All In Club"><span class="featured-photo" style="--x:66.667%;--y:50%" aria-hidden="true"><span class="photo-index">07</span></span><span class="featured-details"><span class="featured-pill">Hot dog</span><span class="featured-name">Uruguai</span><span class="featured-description">Duas salsichas com calabresa, bacon, cream cheese e acompanhamentos.</span><span class="featured-link">Ver no cardápio oficial <span aria-hidden="true">↗</span></span></span></a>
+        <a class="featured-card" data-category="dogs" href="https://allinclube.saipos.com/home" target="_blank" rel="noopener noreferrer" aria-label="Ver Jamaica no cardápio oficial da All In Club"><span class="featured-photo" style="--x:100%;--y:50%" aria-hidden="true"><span class="photo-index">08</span></span><span class="featured-details"><span class="featured-pill">Hot dog</span><span class="featured-name">Jamaica</span><span class="featured-description">Duas salsichas, frango, cream cheese, maionese e complementos.</span><span class="featured-link">Ver no cardápio oficial <span aria-hidden="true">↗</span></span></span></a>
+        <a class="featured-card" data-category="combos" href="https://allinclube.saipos.com/home" target="_blank" rel="noopener noreferrer" aria-label="Ver Combo Santiago no cardápio oficial da All In Club"><span class="featured-photo" style="--x:0%;--y:100%" aria-hidden="true"><span class="photo-index">09</span><span class="photo-note">Foto do burger do combo</span></span><span class="featured-details"><span class="featured-pill">Combo individual</span><span class="featured-name">Combo Santiago</span><span class="featured-description">Santiago Burger com fritas, refrigerante 200 ml e maionese All In Club.</span><span class="featured-link">Ver no cardápio oficial <span aria-hidden="true">↗</span></span></span></a>
+        <a class="featured-card" data-category="combos" href="https://allinclube.saipos.com/home" target="_blank" rel="noopener noreferrer" aria-label="Ver Combo Toronto no cardápio oficial da All In Club"><span class="featured-photo" style="--x:33.333%;--y:100%" aria-hidden="true"><span class="photo-index">10</span><span class="photo-note">Foto do burger do combo</span></span><span class="featured-details"><span class="featured-pill">Combo individual</span><span class="featured-name">Combo Toronto</span><span class="featured-description">Toronto Burger com fritas, refrigerante 200 ml e maionese All In Club.</span><span class="featured-link">Ver no cardápio oficial <span aria-hidden="true">↗</span></span></span></a>
+        <a class="featured-card" data-category="combos" href="https://allinclube.saipos.com/home" target="_blank" rel="noopener noreferrer" aria-label="Ver Duplo Montevidéu no cardápio oficial da All In Club"><span class="featured-photo" style="--x:66.667%;--y:100%" aria-hidden="true"><span class="photo-index">11</span><span class="photo-note">Foto do burger do combo</span></span><span class="featured-details"><span class="featured-pill">Combo para casal</span><span class="featured-name">Duplo Montevidéu</span><span class="featured-description">Dois Montevidéu Burgers, duas fritas, duas maioneses e dois refrigerantes.</span><span class="featured-link">Ver no cardápio oficial <span aria-hidden="true">↗</span></span></span></a>
+        <a class="featured-card" data-category="promos" href="https://allinclube.saipos.com/home" target="_blank" rel="noopener noreferrer" aria-label="Ver Buenos Aires no cardápio oficial da All In Club"><span class="featured-photo" style="--x:100%;--y:100%" aria-hidden="true"><span class="photo-index">12</span></span><span class="featured-details"><span class="featured-pill">Promoção</span><span class="featured-name">Buenos Aires</span><span class="featured-description">Hambúrguer com cheddar, bacon e cream cheese. Consulte a promoção vigente.</span><span class="featured-link">Ver no cardápio oficial <span aria-hidden="true">↗</span></span></span></a>
+      </div>
+      <div class="gallery-actions">
+        <button id="galleryShowMore" class="btn outline gallery-more" type="button" hidden>Mostrar todos os 12 produtos <span class="btn-arrow" aria-hidden="true">↓</span></button>
+        <a class="btn primary" href="https://allinclube.saipos.com/home" target="_blank" rel="noopener noreferrer">Ver cardápio completo <span class="btn-arrow" aria-hidden="true">↗</span></a>
+      </div>
+      <p class="gallery-disclaimer">Fotos reais extraídas de capturas do cardápio fornecidas para esta prévia. A qualidade final depende das fotos originais autorizadas. As imagens dos combos mostram o lanche principal, não todos os itens. Valores, disponibilidade e ofertas válidos apenas conforme o cardápio oficial atualizado na Saipos.</p>
     </section>
     <section class="section alt" id="pedidos" aria-labelledby="order-title">
       <div class="shell ordering-grid">
@@ -336,6 +388,43 @@
         video.currentTime = 0;
         video.play().catch(() => { replay.hidden = false; });
       });
+
+      // Filtros progressivos; sem JavaScript todos os 12 produtos permanecem visíveis.
+      const cards = Array.from(document.querySelectorAll('.featured-card'));
+      const filters = Array.from(document.querySelectorAll('.gallery-filter'));
+      const counter = document.getElementById('galleryCounter');
+      const more = document.getElementById('galleryShowMore');
+      let activeCategory = 'all';
+      let expanded = false;
+      function updateGallery() {
+        let visible = 0, total = 0;
+        cards.forEach(card => {
+          const matches = activeCategory === 'all' || card.dataset.category === activeCategory;
+          if (matches) total++;
+          const show = matches && (activeCategory !== 'all' || expanded || total <= 6);
+          card.hidden = !show;
+          if (show) visible++;
+        });
+        filters.forEach(button => {
+          const selected = button.dataset.filter === activeCategory;
+          button.classList.toggle('active', selected);
+          button.setAttribute('aria-pressed', String(selected));
+        });
+        more.hidden = activeCategory !== 'all' || expanded;
+        counter.textContent = activeCategory === 'all' && !expanded
+          ? visible + ' de ' + total + ' produtos · veja mais abaixo'
+          : total + ' produto' + (total === 1 ? '' : 's') + ' nesta seleção';
+      }
+      filters.forEach(button => button.addEventListener('click', () => {
+        activeCategory = button.dataset.filter;
+        expanded = false;
+        updateGallery();
+      }));
+      more.addEventListener('click', () => {
+        expanded = true;
+        updateGallery();
+      });
+      updateGallery();
     })();
   </script>
 </body>
