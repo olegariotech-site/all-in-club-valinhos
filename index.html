@@ -55,6 +55,10 @@
     h1 strong{color:var(--yellow);font-weight:900}
     .hero-sub{font-size:clamp(17px,1.65vw,21px);color:#d9d9d4;line-height:1.65;max-width:430px;margin-bottom:31px}
     .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .hero-quicklinks{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:16px}
+    .hero-quicklinks a{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.26);border-radius:999px;background:rgba(10,10,10,.45);padding:9px 14px;font-size:11px;font-weight:800;color:#eee;transition:border-color .22s,color .22s,background .22s;backdrop-filter:blur(7px)}
+    .hero-quicklinks a:hover{border-color:var(--yellow);color:var(--yellow);background:rgba(10,10,10,.72)}
+    .hero-quicklinks a .quick-symbol{font-size:15px;color:var(--yellow);line-height:1}
     .btn{min-height:56px;padding:0 25px;font-size:13px;letter-spacing:.04em}
     .btn.primary{background:var(--yellow);color:#0d0d0b}
     .btn.primary:hover{background:var(--yellow2)}
@@ -222,6 +226,10 @@
             <a class="btn primary" href="https://allinclube.saipos.com/home" target="_blank" rel="noopener noreferrer">Ver cardápio <span class="btn-arrow" aria-hidden="true">↗</span></a>
             <a class="btn outline" href="https://wa.me/5519992666989?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20All%20In%20Club%20e%20gostaria%20de%20fazer%20um%20pedido." target="_blank" rel="noopener noreferrer">Pedir no WhatsApp <span class="btn-arrow" aria-hidden="true">↗</span></a>
           </div>
+          <nav class="hero-quicklinks" aria-label="Acessos rápidos da All In Club">
+            <a href="https://maps.app.goo.gl/zZRdNen1wt4B3zmK8" target="_blank" rel="noopener noreferrer" aria-label="Abrir localização oficial no Google Maps"><span class="quick-symbol" aria-hidden="true">⌖</span> Google Maps <span aria-hidden="true">↗</span></a>
+            <a href="https://linktr.ee/allinclubvalinhos" target="_blank" rel="noopener noreferrer" aria-label="Abrir todos os links oficiais no Linktree"><span class="quick-symbol" aria-hidden="true">↗</span> Todos os links oficiais</a>
+          </nav>
         </div>
         <div class="hero-bottom">
           <div class="hero-stats">
@@ -276,7 +284,7 @@
       <div class="shell visit-inner">
         <div><p class="eyebrow">Estamos em Valinhos</p><h2 id="visit-title">COLA<br>NA <span style="-webkit-text-stroke:2px #111;color:transparent">ALL IN.</span></h2>
         <p>Rua Ângelo Dalanegra, 319<br>Jardim São Luiz · Valinhos, SP</p>
-        <a class="btn" href="https://maps.app.goo.gl/zZRdNen1wt4B3zmK8" target="_blank" rel="noopener noreferrer">Como chegar <span class="btn-arrow" aria-hidden="true">↗</span></a></div>
+        <a class="btn" href="https://maps.app.goo.gl/zZRdNen1wt4B3zmK8" target="_blank" rel="noopener noreferrer" aria-label="Abrir a localização da All In Club no Google Maps">Ver no Google Maps <span class="btn-arrow" aria-hidden="true">↗</span></a></div>
         <div class="visit-label" aria-hidden="true">É EM<br>VALINHOS!<br>↘</div>
       </div>
     </section>
@@ -289,7 +297,7 @@
     <div class="shell">
       <div class="footer-inner">
         <div><a href="#inicio" class="brand"><img class="brand-logo" src="assets/allin-logo-premium.png" alt="" width="58" height="58" decoding="async" loading="lazy"><span class="brand-name">ALL IN CLUB<span>HAMBURGUERIA &amp; DOGUERIA</span></span></a><p class="footer-copy" style="margin-top:25px">Conceito visual independente desenvolvido pela Olegario Tech para apresentação comercial. Não é o website oficial da All In Club. Marcas e características dos produtos estão sujeitas à aprovação do estabelecimento.</p></div>
-        <div class="footer-links"><a href="#favoritos">Cardápio</a><a href="#pedidos">Fazer pedido</a><a href="https://maps.app.goo.gl/zZRdNen1wt4B3zmK8" target="_blank" rel="noopener noreferrer">Localização</a><a href="https://www.instagram.com/allin.club_valinhos/" target="_blank" rel="noopener noreferrer">Instagram</a></div>
+        <div class="footer-links"><a href="#favoritos">Cardápio</a><a href="#pedidos">Fazer pedido</a><a href="https://maps.app.goo.gl/zZRdNen1wt4B3zmK8" target="_blank" rel="noopener noreferrer">Localização</a><a href="https://www.instagram.com/allin.club_valinhos/" target="_blank" rel="noopener noreferrer">Instagram</a><a href="https://linktr.ee/allinclubvalinhos" target="_blank" rel="noopener noreferrer" aria-label="Todos os links oficiais da All In Club no Linktree">Linktree oficial</a></div>
       </div>
       <div class="footer-meta"><span>ALL IN CLUB VALINHOS · PROJETO CONCEITUAL</span><span>Prévia comercial por OLEGARIO TECH® · Não publicado como site oficial</span></div>
     </div>
