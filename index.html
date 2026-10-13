@@ -222,6 +222,7 @@
       *,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}
     }
   </style>
+  <link rel="stylesheet" href="immersive-v2.css">
 </head>
 <body>
   <a href="#conteudo" class="skip">Pular para o conteúdo</a>
@@ -233,7 +234,7 @@
         <span class="brand-name">ALL IN CLUB <span>HAMBURGUERIA &amp; DOGUERIA</span></span>
       </a>
       <nav id="nav" class="nav" aria-label="Navegação principal">
-        <a href="#inicio">Início</a><a href="#favoritos">Cardápio</a><a href="#pedidos">Peça agora</a><a href="#sobre">Sobre</a><a href="#contato">Contato</a>
+        <a href="#inicio">Início</a><a href="#experiencia">Experiência</a><a href="#favoritos">Cardápio</a><a href="#pedidos">Peça agora</a><a href="#sobre">Sobre</a><a href="#contato">Contato</a>
       </nav>
       <a class="nav-cta" href="https://allinclube.saipos.com/home" target="_blank" rel="noopener noreferrer">Fazer pedido <span aria-hidden="true">↗</span></a>
       <button class="menu-btn" id="menuButton" type="button" aria-label="Abrir menu" aria-controls="nav" aria-expanded="false">☰</button>
@@ -277,9 +278,114 @@
       <span>ALL IN CLUB</span><b>★</b><span>BURGERS</span><b>★</b><span>DOGS</span><b>★</b><span>COMBOS</span><b>★</b><span>VALINHOS</span><b>★</b>
       <span>ALL IN CLUB</span><b>★</b><span>BURGERS</span><b>★</b><span>DOGS</span><b>★</b><span>COMBOS</span><b>★</b><span>VALINHOS</span><b>★</b>
     </div></div>
+
+    <!-- Experiência horizontal · preview conceitual independente, sem fotos de ingredientes isolados -->
+    <section class="experience" id="experiencia" aria-label="Experiência imersiva All In Club">
+      <div class="experience-sticky">
+        <div class="experience-viewport" id="experienceViewport" role="region" aria-label="Galeria horizontal de sabores. Use os botões de seta ou deslize para navegar." tabindex="0">
+          <div class="experience-track">
+            <article class="experience-panel experience-panel--intro is-active" aria-labelledby="exp-title-1">
+              <span class="experience-index" aria-hidden="true">ALL IN CLUB / 01</span>
+              <div class="experience-oversize" aria-hidden="true">ALL IN</div>
+              <div class="experience-interior">
+                <div class="experience-copy">
+                  <span class="experience-kicker">Uma experiência além do cardápio</span>
+                  <h2 class="experience-title" id="exp-title-1">NÃO É SÓ<br>UM <span class="accent">LANCHE.</span></h2>
+                  <p class="experience-description">É o primeiro olhar. É a vontade chegando antes da primeira mordida. Bem-vindo ao universo All In.</p>
+                  <a class="experience-ghost" href="#favoritos">Conheça nossos destaques ↗</a>
+                </div>
+                <div class="experience-product">
+                  <div class="experience-ambient" aria-hidden="true"></div>
+                  <img class="experience-image" src="assets/allin-burger-premium-moscou.png" alt="Representação digital de um hambúrguer de múltiplas camadas apresentado sobre fundo escuro" loading="lazy" decoding="async" width="1024" height="1024">
+                </div>
+              </div>
+              <span class="experience-swipe" aria-hidden="true">Role para viajar pelos sabores →</span>
+            </article>
+            <article class="experience-panel experience-panel--product" aria-labelledby="exp-title-2">
+              <span class="experience-index" aria-hidden="true">ALL IN CLUB / 02</span>
+              <div class="experience-oversize" aria-hidden="true">LISBOA</div>
+              <div class="experience-interior">
+                <div class="experience-copy">
+                  <span class="experience-kicker">Burger artesanal / destaque</span>
+                  <h2 class="experience-title experience-title--product" id="exp-title-2">LIS<span class="accent">BOA.</span></h2>
+                  <p class="experience-description">Brioche, cheddar, bacon, catupiry e barbecue. A combinação é protagonista da cena.</p>
+                  <a class="experience-action" href="https://allinclube.saipos.com/home" target="_blank" rel="noopener noreferrer">Ver no cardápio <span aria-hidden="true">↗</span></a>
+                </div>
+                <div class="experience-product">
+                  <div class="experience-ambient" aria-hidden="true"></div>
+                  <img class="experience-image" src="assets/allin-burger-premium-lisboa.png" alt="Representação publicitária digital do hambúrguer Lisboa, sujeita à validação do estabelecimento" loading="lazy" decoding="async" width="1024" height="1024">
+                </div>
+              </div>
+            </article>
+            <article class="experience-panel experience-panel--blast" aria-labelledby="exp-title-3">
+              <span class="experience-index" aria-hidden="true">ALL IN CLUB / 03</span>
+              <div class="experience-oversize" aria-hidden="true">SANTIAGO</div>
+              <div class="experience-interior">
+                <div class="experience-copy">
+                  <span class="experience-kicker">Santiago / impacto em cada camada</span>
+                  <h2 class="experience-title experience-title--product" id="exp-title-3">O SABOR<br><span class="accent">EXPLODE.</span></h2>
+                  <p class="experience-description">Camadas de sabor em movimento: brioche, cheddar, bacon e rúcula entram em cena.</p>
+                  <a class="experience-action" href="https://allinclube.saipos.com/home" target="_blank" rel="noopener noreferrer">Explorar o cardápio <span aria-hidden="true">↗</span></a>
+                </div>
+                <div class="experience-product">
+                  <img class="experience-image" src="assets/allin-burger-premium-santiago.png" alt="Representação digital do burger Santiago com efeito visual de partículas ao redor; ingredientes não foram fotografados separadamente" loading="lazy" decoding="async" width="1024" height="1024">
+                  <div class="experience-burst" aria-hidden="true">
+                    <span class="burst-tag burst-tag--a">Brioche</span>
+                    <span class="burst-tag burst-tag--b">Cheddar</span>
+                    <span class="burst-tag burst-tag--c">Bacon</span>
+                    <span class="burst-tag burst-tag--d">Rúcula</span>
+                  </div>
+                </div>
+              </div>
+              <span class="experience-mark" aria-hidden="true">EXPLOSÃO / 01</span>
+            </article>
+            <article class="experience-panel experience-panel--dog" aria-labelledby="exp-title-4">
+              <span class="experience-index" aria-hidden="true">ALL IN CLUB / 04</span>
+              <div class="experience-oversize" aria-hidden="true">EGITO</div>
+              <div class="experience-interior">
+                <div class="experience-copy">
+                  <span class="experience-kicker">Dogueria / uma viagem de sabores</span>
+                  <h2 class="experience-title experience-title--product" id="exp-title-4">TEM<br><span class="accent">DOG TAMBÉM.</span></h2>
+                  <p class="experience-description">Do burger ao hot dog, a próxima escolha é sua. Conheça a seleção da casa.</p>
+                  <a class="experience-action" href="https://allinclube.saipos.com/home" target="_blank" rel="noopener noreferrer">Ver hot dogs <span aria-hidden="true">↗</span></a>
+                </div>
+                <div class="experience-product">
+                  <img class="experience-image experience-image--dog" src="assets/allin-hotdog-premium-egito.png" alt="Representação publicitária digital de um hot dog; confirmar aparência e ingredientes com a hamburgueria" loading="lazy" decoding="async" width="1024" height="1024">
+                </div>
+              </div>
+            </article>
+            <article class="experience-panel experience-panel--last" aria-labelledby="exp-title-5">
+              <span class="experience-index" aria-hidden="true">ALL IN CLUB / 05</span>
+              <div class="experience-oversize" aria-hidden="true">PEDIU?</div>
+              <div class="experience-interior">
+                <div class="experience-copy">
+                  <span class="experience-kicker">Sua escolha começa aqui</span>
+                  <h2 class="experience-title experience-title--closing" id="exp-title-5">BATEU<br>A <span class="accent">FOME?</span><br>ALL IN.</h2>
+                  <p class="experience-description">Escolha seu favorito e confira as opções, os preços e a disponibilidade no cardápio oficial.</p>
+                  <a class="experience-action" href="https://allinclube.saipos.com/home" target="_blank" rel="noopener noreferrer">Pedir agora <span aria-hidden="true">↗</span></a>
+                </div>
+                <div class="experience-product">
+                  <img class="experience-image" src="assets/allin-burger-premium-cabul.png" alt="Imagem publicitária digital ilustrativa de um hambúrguer, sujeito à aprovação do estabelecimento" loading="lazy" decoding="async" width="1024" height="1024">
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+        <div class="experience-ui">
+          <div class="experience-progress" aria-label="Progresso da experiência">
+            <span class="experience-progress-label" data-exp-index>01 / 05</span>
+            <span class="experience-progress-track" aria-hidden="true"><span class="experience-progress-fill"></span></span>
+          </div>
+          <div class="experience-controls" aria-label="Navegar entre cenas">
+            <button type="button" data-exp-prev aria-label="Cena anterior" disabled>←</button>
+            <button type="button" data-exp-next aria-label="Próxima cena">→</button>
+          </div>
+        </div>
+      </div>
+    </section>
     <section class="section shell" id="favoritos" aria-labelledby="food-title">
       <div class="section-head curated-head">
-        <div><p class="eyebrow">Vitrine All In Club · Produtos do cardápio real</p><h2 id="food-title">UMA VIAGEM<br><em>DE SABORES.</em></h2></div>
+        <div><p class="eyebrow">Vitrine All In Club · Imagens conceituais</p><h2 id="food-title">UMA VIAGEM<br><em>DE SABORES.</em></h2></div>
         <p class="section-intro">Dos burgers artesanais aos hot dogs caprichados: descubra o seu próximo favorito e peça diretamente pelo cardápio da casa.</p>
       </div>
       <div class="gallery-controls">
@@ -427,5 +533,6 @@
       updateGallery();
     })();
   </script>
+  <script defer src="immersive-v2.js"></script>
 </body>
 </html>
