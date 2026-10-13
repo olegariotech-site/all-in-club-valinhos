@@ -186,3 +186,32 @@ body{background:#050505}
   .experience-track,.experience-image,.burst-tag,.burst-spark,#favoritos .featured-photo{animation:none!important;transition:none!important;will-change:auto!important}
   .experience-panel--blast .experience-product{--burst:0!important}
 }
+
+/* Camadas de produto responsivas: texto sempre utilizável em telas baixas. */
+@media(max-width:960px){
+  .experience-interior{position:relative;display:flex;align-items:flex-start;flex-direction:column;justify-content:flex-start;padding:clamp(84px,8vh,112px) 0 110px}
+  .experience-copy{position:relative;z-index:6;max-width:80%}
+  .experience-product,.experience-panel--intro .experience-product{position:absolute;right:-5vw;bottom:75px;width:min(79vw,710px);height:min(58svh,640px);min-height:0;max-height:none;z-index:2;justify-self:auto}
+  .experience-panel:after{background:linear-gradient(180deg,#050505da 0%,#05050570 28%,transparent 59%,#050505bf 98%)}
+  .experience-panel--blast .experience-product{--burst:.72}
+}
+@media(max-width:760px){
+  .experience-interior{padding:85px 0 110px}
+  .experience-copy{max-width:100%}
+  .experience-product,.experience-panel--intro .experience-product{right:-14vw;bottom:86px;width:103vw;height:clamp(265px,47svh,430px)}
+  .experience-title,.experience-title--product{font-size:clamp(64px,16vw,105px)}
+  .experience-description{max-width:315px;font-size:13px}
+  .experience-swipe{bottom:155px}
+  .experience-panel--last .experience-product{opacity:.7}
+}
+@media(max-width:520px){
+  .experience-interior{padding:78px 0 110px}
+  .experience-title,.experience-title--product{font-size:clamp(58px,17vw,85px)}
+  .experience-description{max-width:290px}
+  .experience-product,.experience-panel--intro .experience-product{right:-17vw;bottom:90px;width:115vw;height:clamp(252px,43svh,380px)}
+  .experience-panel--blast .experience-product{right:-12vw}
+  .experience-ui{bottom:88px}
+}
+@supports(-webkit-mask-image:linear-gradient(#000,transparent)){
+  .experience-image,.experience-slice{-webkit-mask-image:radial-gradient(ellipse 62% 61% at center,#000 52%,transparent 97%)}
+}
