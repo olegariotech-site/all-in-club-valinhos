@@ -72,6 +72,16 @@ body{background:#050505}
 .experience--pinned .experience-sticky{position:sticky}
 .experience--pinned .experience-track{will-change:transform}
 @media(min-width:961px){.experience--pinned .experience-panel:not(.is-active) .experience-copy{opacity:.28;transform:translate3d(0,22px,0)}.experience--pinned .experience-panel .experience-copy{transition:opacity .35s,transform .55s var(--v2-ease)}}
+
+/* Deconstrução em três fatias da fotografia: efeito visual, não camadas reais de ingredientes. */
+.experience-panel--blast .experience-image{opacity:calc(1 - var(--burst,0)*.96);transition:opacity .15s linear}
+.experience-slices{position:absolute;inset:0;z-index:2;pointer-events:none;opacity:var(--burst,0);will-change:opacity}
+.experience-slice{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;mix-blend-mode:screen;mask-image:radial-gradient(ellipse 62% 61% at center,#000 52%,transparent 97%);filter:saturate(1.14) contrast(1.04);will-change:transform}
+.experience-slice--top{clip-path:inset(0 0 63% 0);transform:translate3d(calc(var(--burst,0)*-24px),calc(var(--burst,0)*-75px),0) rotate(calc(var(--burst,0)*-5deg))}
+.experience-slice--middle{clip-path:inset(36% 0 36% 0);transform:translate3d(calc(var(--burst,0)*25px),calc(var(--burst,0)*-2px),0) rotate(calc(var(--burst,0)*4deg))}
+.experience-slice--bottom{clip-path:inset(63% 0 0 0);transform:translate3d(calc(var(--burst,0)*-16px),calc(var(--burst,0)*72px),0) rotate(calc(var(--burst,0)*-3deg))}
+@media(prefers-reduced-motion:reduce){.experience-slices{display:none!important}.experience-panel--blast .experience-image{opacity:1!important}}
+
 /* Favoritos: galeria editorial, sem caixas pesadas. */
 #favoritos{padding-block:clamp(85px,10vw,160px)}
 #favoritos .curated-head{margin-bottom:44px}
