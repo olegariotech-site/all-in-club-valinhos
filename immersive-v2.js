@@ -30,15 +30,12 @@
     const progress = clamp(offset / width, 0, 1);
     section.style.setProperty('--exp-progress', String(progress));
     const index = indexFor(offset);
-    if (index !== currentIndex || !panels[currentIndex].classList.contains('is-active')) {
-      currentIndex = index;
-      panels.forEach((panel, i) => {
-        panel.classList.toggle('is-active', i === currentIndex);
-        // Keeps keyboard focus within the scene that's actually on-screen when pinned.
-        if (pinned) panel.inert = i !== currentIndex;
-        else panel.inert = false;
-      });
-    }
+    currentIndex = index;
+    panels.forEach((panel, i) => {
+      panel.classList.toggle('is-active', i === currentIndex);
+      // Keeps off-screen scenes outside keyboard tab order while pinned.
+      panel.inert = pinned && i !== currentIndex;
+    });
     if (counter) counter.textContent = String(index + 1).padStart(2, '0') + ' / ' + String(panels.length).padStart(2, '0');
     if (prev) prev.disabled = index === 0;
     if (next) next.disabled = index === panels.length - 1;
@@ -92,12 +89,18 @@
     const offset = index * viewport.clientWidth;
     if (pinned) {
       const top = section.getBoundingClientRect().top + window.scrollY;
-      window.scrollTo({ top: top + offset, behavior: reducedMotion.matches ? 'instant' : 'smooth' });
+      window.scrollTo({ top: top + offset, behavior: reducedMotion.matches ? 'auto' : 'smooth' });
     } else {
       viewport.scrollTo({ left: offset, behavior: reducedMotion.matches ? 'instant' : 'smooth' });
     }
   }
 
+  viewport.addEventListener('keydown', event => {
+    // Do not take arrow keys away from a focused child CTA.
+    if (event.target !== viewport) return;
+    if (event.key === 'ArrowRight') { event.preventDefault(); scrollToIndex(currentIndex + 1); }
+    if (event.key === 'ArrowLeft') { event.preventDefault(); scrollToIndex(currentIndex - 1); }
+  });
   prev?.addEventListener('click', () => scrollToIndex(currentIndex - 1));
   next?.addEventListener('click', () => scrollToIndex(currentIndex + 1));
   viewport.addEventListener('scroll', schedulePaint, { passive: true });
