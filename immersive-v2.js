@@ -133,13 +133,15 @@
   // Small pointer response on editorial product photography, never shifts actual content.
   if (window.matchMedia('(hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)').matches) {
     document.querySelectorAll('#favoritos .featured-photo').forEach(photo => {
+      const img = photo.querySelector('img');
+      if (!img) return;
       photo.addEventListener('pointermove', event => {
         const rect = photo.getBoundingClientRect();
         const x = (event.clientX - rect.left) / rect.width - .5;
         const y = (event.clientY - rect.top) / rect.height - .5;
-        photo.style.backgroundPosition = 'calc(50% + ' + (x * 9).toFixed(1) + 'px) calc(50% + ' + (y * 9).toFixed(1) + 'px)';
+        img.style.transform = 'scale(1.06) translate3d(' + (x * 8).toFixed(1) + 'px,' + (y * 8).toFixed(1) + 'px,0)';
       }, { passive: true });
-      photo.addEventListener('pointerleave', () => { photo.style.backgroundPosition = ''; });
+      photo.addEventListener('pointerleave', () => { img.style.transform = ''; });
     });
   }
   configure();
