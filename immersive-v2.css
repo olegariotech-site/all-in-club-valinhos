@@ -318,3 +318,88 @@ body{background:#050505}
   .experience-panel--intro .experience-product{right:-5vw;bottom:74px;width:94vw;height:clamp(205px,32svh,260px)}
   .experience-panel--intro .experience-swipe{display:none}
 }
+
+
+/* OT · acabamento mobile 14/10/26
+   Hero com quadro de vídeo completo, copy em faixa própria e produtos sem cortes. */
+@media(max-width:760px){
+  .hero{
+    min-height:0;
+    min-height:max(760px,calc(100svh - 32px));
+    align-items:flex-start;
+  }
+  .hero-media{
+    inset:82px 0 auto;
+    height:clamp(245px,76vw,340px);
+    background:radial-gradient(circle at 53% 48%,rgba(126,77,28,.24),transparent 66%),#080909;
+  }
+  .hero video{
+    object-fit:contain;
+    object-position:center;
+    background:#080909;
+  }
+  .hero-shade{
+    background:linear-gradient(180deg,rgba(0,0,0,.32) 0%,transparent 19%,rgba(5,5,5,.08) 43%,#050505 100%);
+  }
+  .hero-content{
+    padding-top:clamp(340px,46vw,390px);
+    padding-bottom:116px;
+  }
+  .hero-copy{max-width:540px}
+  .hero .eyebrow{font-size:9px;letter-spacing:.14em}
+  h1{font-size:clamp(64px,14vw,94px);line-height:.82;margin:16px 0 18px}
+  .hero-sub{font-size:14px;line-height:1.55;max-width:34ch;margin-bottom:18px}
+  .hero-actions{gap:9px}
+  .hero-actions .btn{min-height:48px;padding-inline:16px;font-size:11px}
+  .hero-quicklinks{gap:8px;margin-top:12px}
+  .hero-quicklinks a{font-size:10px;padding:8px 11px}
+  .hero-bottom{bottom:26px}
+  .hero-stats{gap:10px}
+  .hero-stat{font-size:9px;letter-spacing:.03em}
+  #favoritos .featured-photo{height:clamp(215px,41vw,310px)}
+  #favoritos .featured-card:first-child .featured-photo{height:clamp(215px,41vw,310px)}
+  #favoritos .featured-photo img{
+    padding:clamp(10px,2.5vw,17px);
+    object-fit:contain;
+    object-position:center;
+  }
+  .experience-product,.experience-panel--intro .experience-product{
+    right:0;
+    bottom:76px;
+    left:50%;
+    width:min(calc(100% - 20px),480px);
+    height:clamp(220px,39svh,320px);
+    transform:translateX(-50%);
+  }
+  .experience-image{
+    object-fit:contain;
+    object-position:center;
+    -webkit-mask-image:radial-gradient(ellipse 72% 70% at center,#000 63%,transparent 100%);
+    mask-image:radial-gradient(ellipse 72% 70% at center,#000 63%,transparent 100%);
+  }
+}
+@media(max-width:520px){
+  .hero{min-height:max(740px,calc(100svh - 32px))}
+  .hero-media{inset:78px 0 auto;height:clamp(232px,76vw,310px)}
+  .hero-content{padding-top:clamp(315px,78vw,340px);padding-bottom:112px}
+  h1{font-size:clamp(60px,17vw,74px);margin:14px 0 16px}
+  .hero-sub{max-width:32ch;font-size:13px;margin-bottom:16px}
+  .hero-actions .btn{min-height:46px;padding-inline:13px;font-size:10px}
+  .hero-quicklinks a{font-size:9px;padding:8px 9px}
+  .hero-bottom{bottom:20px}
+  #favoritos .featured-grid{grid-template-columns:1fr;gap:32px}
+  #favoritos .featured-photo{height:clamp(225px,72vw,310px)}
+  #favoritos .featured-card:first-child .featured-photo{height:clamp(225px,72vw,310px)}
+  #favoritos .featured-photo img{padding:10px}
+  .experience-product,.experience-panel--intro .experience-product{
+    bottom:72px;
+    height:clamp(210px,34svh,270px);
+  }
+}
+@media(max-width:359px){
+  .hero{min-height:0}
+  .hero-content{padding-top:315px;padding-bottom:112px}
+  .hero-actions{align-items:stretch;flex-direction:column}
+  .hero-actions .btn{width:100%}
+  .hero-quicklinks a{font-size:8px}
+}
