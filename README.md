@@ -58,3 +58,7 @@ A vitrine da branch `preview-v1` utiliza as dez imagens `assets/*premium*.png` c
 As imagens são **recriações digitais publicitárias**, não fotos idênticas garantidas dos produtos. A identidade dos itens, ingredientes e direitos de uso precisam ser validados pelo proprietário antes de divulgação oficial.
 
 Recursos: filtros por categoria, seis cards iniciais, botão para expandir e CTAs direcionados à Saipos. Preços não são replicados localmente. Como os PNGs somam mais de 20 MB, **otimizar em WebP/AVIF é etapa pendente antes do lançamento oficial**. A branch `main` deve permanecer intacta, sem alteração, preservada da branch demonstrativa.
+
+## WebP otimizado em 14/10/2026
+
+20 variantes WebP (10 produtos x 960/640 px), com arquivos PNG originais preservados. HTML utiliza srcset e sizes; hero vídeo, logo e demais assets mantidos intactos. Conversão executada na branch preview-v1 com Pillow, qualidade 85/82. O carregamento deve ser revalidado em navegador real. Imagens conceituais dependem de aprovação do proprietário.
