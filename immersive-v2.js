@@ -119,12 +119,12 @@
   // Decorative gold sparks belong to the burger scene, never to the food description.
   const sparks = blast?.querySelector('.experience-burst');
   if (sparks) {
-    for (let i = 0; i < 26; i += 1) {
+    for (let i = 0; i < 18; i += 1) {
       const dot = document.createElement('span');
       dot.className = 'burst-spark';
       dot.setAttribute('aria-hidden', 'true');
       dot.style.setProperty('--rot', (i * 137.5078) + 'deg');
-      dot.style.setProperty('--dist', (85 + i % 7 * 26) + 'px');
+      dot.style.setProperty('--dist', (48 + i % 6 * 13) + 'px');
       dot.style.width = dot.style.height = (i % 4 + 2) + 'px';
       sparks.append(dot);
     }
@@ -139,7 +139,7 @@
         const rect = photo.getBoundingClientRect();
         const x = (event.clientX - rect.left) / rect.width - .5;
         const y = (event.clientY - rect.top) / rect.height - .5;
-        img.style.transform = 'scale(1.06) translate3d(' + (x * 8).toFixed(1) + 'px,' + (y * 8).toFixed(1) + 'px,0)';
+        img.style.transform = 'scale(1.015) translate3d(' + (x * 2).toFixed(1) + 'px,' + (y * 2).toFixed(1) + 'px,0)';
       }, { passive: true });
       photo.addEventListener('pointerleave', () => { img.style.transform = ''; });
     });
