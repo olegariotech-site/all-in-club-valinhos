@@ -73,14 +73,26 @@ body{background:#050505}
 .experience--pinned .experience-track{will-change:transform}
 @media(min-width:961px){.experience--pinned .experience-panel:not(.is-active) .experience-copy{opacity:.28;transform:translate3d(0,22px,0)}.experience--pinned .experience-panel .experience-copy{transition:opacity .35s,transform .55s var(--v2-ease)}}
 
-/* Deconstrução em três fatias da fotografia: efeito visual, não camadas reais de ingredientes. */
-.experience-panel--blast .experience-image{opacity:calc(1 - var(--burst,0)*.96);transition:opacity .15s linear}
-.experience-slices{position:absolute;inset:0;z-index:2;pointer-events:none;opacity:var(--burst,0);will-change:opacity}
-.experience-slice{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;mix-blend-mode:screen;mask-image:radial-gradient(ellipse 62% 61% at center,#000 52%,transparent 97%);filter:saturate(1.14) contrast(1.04);will-change:transform}
-.experience-slice--top{clip-path:inset(0 0 63% 0);transform:translate3d(calc(var(--burst,0)*-24px),calc(var(--burst,0)*-75px),0) rotate(calc(var(--burst,0)*-5deg))}
-.experience-slice--middle{clip-path:inset(36% 0 36% 0);transform:translate3d(calc(var(--burst,0)*25px),calc(var(--burst,0)*-2px),0) rotate(calc(var(--burst,0)*4deg))}
-.experience-slice--bottom{clip-path:inset(63% 0 0 0);transform:translate3d(calc(var(--burst,0)*-16px),calc(var(--burst,0)*72px),0) rotate(calc(var(--burst,0)*-3deg))}
-@media(prefers-reduced-motion:reduce){.experience-slices{display:none!important}.experience-panel--blast .experience-image{opacity:1!important}}
+/* Reveal premium: o burger permanece inteiro, com elevação e luz âmbar. */
+.experience-panel--blast .experience-image{
+  -webkit-mask-image:none;
+  mask-image:none;
+  opacity:1;
+  transform:translate3d(0,calc(var(--burst,0)*-12px),0) scale(calc(1 + var(--burst,0)*.025));
+  filter:drop-shadow(0 28px 38px #000b) saturate(1.12);
+  transition:transform .8s var(--v2-ease),filter .8s var(--v2-ease)
+}
+.experience-panel--blast.is-active .experience-image{
+  transform:translate3d(0,calc(var(--burst,0)*-14px),0) scale(calc(1.015 + var(--burst,0)*.035));
+  filter:drop-shadow(0 32px 44px #000c) drop-shadow(0 0 calc(var(--burst,0)*16px) #c58b2e70) saturate(1.13)
+}
+.burst-tag{opacity:calc(.08 + var(--burst,0)*.78);transition:opacity .55s var(--v2-ease)}
+.burst-tag--a{top:18%;left:21%;transform:translate(calc(var(--burst,0)*-28px),calc(var(--burst,0)*-18px)) rotate(calc(var(--burst,0)*-2deg))}
+.burst-tag--b{top:32%;right:5%;transform:translate(calc(var(--burst,0)*24px),calc(var(--burst,0)*-14px)) rotate(calc(var(--burst,0)*2deg))}
+.burst-tag--c{left:7%;bottom:27%;transform:translate(calc(var(--burst,0)*-22px),calc(var(--burst,0)*18px)) rotate(calc(var(--burst,0)*-2deg))}
+.burst-tag--d{right:12%;bottom:14%;transform:translate(calc(var(--burst,0)*18px),calc(var(--burst,0)*16px)) rotate(calc(var(--burst,0)*2deg))}
+.burst-spark{width:2px;height:2px;box-shadow:0 0 8px #ffd74baa,0 0 18px #e6ad3d88;opacity:calc(var(--burst,0)*.56)}
+@media(prefers-reduced-motion:reduce){.experience-panel--blast .experience-image{opacity:1!important;transform:none!important}.burst-tag,.burst-spark{transition:none!important}}
 
 /* Favoritos: galeria editorial, sem caixas pesadas. */
 #favoritos{padding-block:clamp(85px,10vw,160px)}
@@ -213,13 +225,13 @@ body{background:#050505}
   .experience-ui{bottom:88px}
 }
 @supports(-webkit-mask-image:linear-gradient(#000,transparent)){
-  .experience-image,.experience-slice{-webkit-mask-image:radial-gradient(ellipse 62% 61% at center,#000 52%,transparent 97%)}
+  .experience-image{-webkit-mask-image:radial-gradient(ellipse 62% 61% at center,#000 52%,transparent 97%)}
 }
 
 /* Photos as native lazy-loaded <img>, not eager CSS backgrounds */
 #favoritos .featured-photo{display:block;background-image:none!important;isolation:isolate}
-#favoritos .featured-photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .7s var(--v2-ease),filter .4s}
-#favoritos .featured-card:hover .featured-photo img{transform:scale(1.055);filter:saturate(1.1)}
+#favoritos .featured-photo img{display:block;box-sizing:border-box;width:100%;height:100%;padding:clamp(10px,1.5vw,22px);object-fit:contain;object-position:center;transition:transform .7s var(--v2-ease),filter .4s}
+#favoritos .featured-card:hover .featured-photo img{transform:scale(1.015);filter:saturate(1.08)}
 #favoritos .featured-photo:after{z-index:0;pointer-events:none}
 #favoritos .photo-index,#favoritos .photo-note{z-index:2}
 @media(prefers-reduced-motion:reduce){#favoritos .featured-photo img{transition:none!important;transform:none!important}}
