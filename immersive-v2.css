@@ -403,3 +403,26 @@ body{background:#050505}
   .hero-actions .btn{width:100%}
   .hero-quicklinks a{font-size:8px}
 }
+
+
+/* Tablet em pé: mantém o quadro do vídeo e a hierarquia vertical. */
+@media(min-width:761px) and (max-width:960px) and (orientation:portrait){
+  .hero{
+    min-height:max(880px,calc(100svh - 32px));
+    align-items:flex-start;
+  }
+  .hero-media{
+    inset:92px 0 auto;
+    height:clamp(360px,42svh,440px);
+  }
+  .hero video{object-fit:contain;object-position:center;background:#080909}
+  .hero-shade{
+    background:linear-gradient(180deg,rgba(0,0,0,.32) 0%,transparent 20%,rgba(5,5,5,.08) 44%,#050505 100%);
+  }
+  .hero-content{padding-top:clamp(390px,45svh,460px);padding-bottom:132px}
+  .hero-copy{max-width:640px}
+  h1{font-size:clamp(88px,12vw,116px);line-height:.82;margin:18px 0 22px}
+  .hero-sub{max-width:38ch}
+  .hero-bottom{bottom:32px}
+  #favoritos .featured-photo{height:clamp(290px,36vw,350px)}
+}
