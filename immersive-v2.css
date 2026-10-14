@@ -235,3 +235,65 @@ body{background:#050505}
 #favoritos .featured-photo:after{z-index:0;pointer-events:none}
 #favoritos .photo-index,#favoritos .photo-note{z-index:2}
 @media(prefers-reduced-motion:reduce){#favoritos .featured-photo img{transition:none!important;transform:none!important}}
+
+/* OT · refinamento pós-auditoria 14/10/26: card institucional escuro.
+   Recorte apenas visual do fundo opaco; o PNG original segue intacto. */
+.story{gap:clamp(28px,4vw,72px)}
+.story-art{
+  min-height:clamp(390px,39vw,545px);
+  border:1px solid rgba(255,219,36,.16);
+  background:radial-gradient(circle at 50% 47%,rgba(238,170,40,.18),rgba(154,96,23,.055) 37%,transparent 68%),#050505;
+  isolation:isolate;
+  box-shadow:inset 0 0 95px rgba(0,0,0,.38);
+}
+.story-art::after{color:rgba(255,219,36,.04)}
+.story-logo-lockup{z-index:2;width:min(90%,510px);height:auto;display:grid;place-items:center;filter:drop-shadow(0 14px 33px rgba(0,0,0,.36))}
+.story-logo{
+  width:min(100%,475px);max-height:none;aspect-ratio:1;object-fit:contain;
+  mix-blend-mode:normal;filter:none;
+  border-radius:50%;
+  clip-path:circle(49% at 50% 50%);
+  -webkit-mask-image:radial-gradient(circle closest-side,#000 83%,rgba(0,0,0,.95) 90%,transparent 99%);
+  mask-image:radial-gradient(circle closest-side,#000 83%,rgba(0,0,0,.95) 90%,transparent 99%);
+}
+.story-copy h2{font-size:clamp(60px,7.2vw,105px);line-height:.87}
+.story-copy p{font-size:clamp(15px,1.3vw,17px);max-width:510px;line-height:1.7}
+.story-copy .btn{min-width:225px}
+/* Fotografia gastronômica: preservar produto inteiro com enquadramento consistente. */
+#favoritos .featured-photo{
+  background:radial-gradient(circle at 50% 45%,rgba(175,103,28,.10),transparent 67%),#0b0a09;
+}
+#favoritos .featured-photo img{
+  box-sizing:border-box;width:100%;height:100%;
+  padding:clamp(12px,1.7vw,24px);
+  object-fit:contain;object-position:50% 50%;
+  transform:scale(1);transition:transform .45s var(--v2-ease),filter .45s var(--v2-ease);
+}
+#favoritos .featured-card:hover .featured-photo{transform:none;filter:none}
+#favoritos .featured-card:hover .featured-photo img{transform:scale(1.012);filter:saturate(1.045)}
+#favoritos .featured-photo:after{background:linear-gradient(0deg,rgba(4,4,4,.20),transparent 31%)}
+.experience-panel--blast .experience-image{opacity:1!important}
+.experience-panel--blast .experience-product:after{
+  content:"";position:absolute;z-index:0;inset:15% 10%;border-radius:50%;pointer-events:none;
+  background:radial-gradient(circle,rgba(246,164,38,.09),transparent 62%);
+  transform:scale(calc(1 + var(--burst,0)*.14));
+  opacity:calc(.3 + var(--burst,0)*.5);
+}
+/* Menos efeitos nas telas pequenas; botões e títulos ficam acima do produto. */
+@media(max-width:960px){
+  .story-art{min-height:410px}
+  .story-logo{width:min(82%,355px)}
+}
+@media(max-width:760px){
+  .story-art{min-height:330px}
+  .story-logo{width:min(83%,290px)}
+  .story-copy h2{font-size:clamp(64px,11vw,96px)}
+  .experience-ui{z-index:22}
+}
+@media(max-width:420px){
+  .story-art{min-height:290px}
+  .story-logo{width:min(86%,248px)}
+}
+@media(prefers-reduced-motion:reduce){
+  .story-logo,#favoritos .featured-photo img,.experience-panel--blast .experience-product:after{animation:none!important;transition:none!important}
+}

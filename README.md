@@ -2,38 +2,28 @@
 
 **Olegario Tech® | Proposta visual demonstrativa, sem vínculo formal com o estabelecimento.**
 
-## Immersive V2 — prévia para homologação visual
+## Immersive V2 — demonstração pública e refinamento visual
 
-**Estado:** implementada exclusivamente na `preview-v1`; ainda não publicada nem aprovada visualmente em navegador.
+**Publicado:** GitHub Pages em `https://olegariotech-site.github.io/all-in-club-valinhos/`, branch `preview-v1`, pasta `/ (root)`. Esta configuração foi confirmada pelas capturas do painel Pages e por execuções de deploy concluídas no GitHub Actions. O site é uma **proposta independente não oficial**, com `noindex`, e o proprietário ainda precisa aprovar identidade, fotos e descrições.
 
-A nova homepage combina quatro referências de direção de arte: Eduardo del Fraile (galeria horizontal sobre preto), Amrit Palace (fotografia de alimento com luz quente), Apple (protagonismo do produto e simplicidade comercial) e Busy Bee Honey (tipografia forte e marquee amarelo). A execução preserva a marca preta/amarela; não utiliza logotipos, tipografia licenciada ou identidade das marcas de referência.
+**Experiência:** hero com vídeo Veo original em `autoplay muted loop playsinline` (estático em dispositivos com preferência por movimento reduzido), galeria horizontal em cinco cenas, burger Santiago inteiro com luz âmbar e partículas moderadas, vitrine editorial com doze itens e filtros por categoria.
 
-- **Hero:** vídeo Veo, logo e CTAs originais preservados.
-- **Experiência horizontal:** cinco cenas, com burgers e hot dog existentes na pasta `assets/`. Em desktop a rolagem vertical controla uma trilha horizontal fixa; em celular/tablet há navegação horizontal nativa com swipe e snap. Botões de seta também funcionam por clique/toque ou teclado.
-- **Efeito de explosão:** a imagem do burger Santiago é fragmentada visualmente em três faixas com deslocamentos, partículas douradas e rótulos de ingredientes presentes na descrição atual. Isso **não equivale à separação tridimensional real dos ingredientes**; é uma demonstração criativa.
-- **Galeria:** mantém os 12 itens, categorias, filtros e CTA Saipos. Layout agora é editorial, com fotos amplas e destaque para Lisboa. As 12 fotos da galeria passaram de CSS backgrounds para `<img loading="lazy">` para evitar carga imediata desnecessária.
-- **Arquivos:** `index.html`, `immersive-v2.css` e `immersive-v2.js`, sem bibliotecas de animação, build ou dependências extras.
-- **Acessibilidade:** `prefers-reduced-motion`, setas por teclado quando a região da experiência está focada, conteúdo navegável sem JS, indicações textuais, `noindex` e aviso de prévia não oficial mantidos.
+**Refinamentos de 14/10/2026:** logo existente preservado e mostrado sobre composição preta com recorte visual circular para reduzir a aparência de fundo retangular; sem conversão permanente do PNG para transparência e sem alteração do arquivo original. Texto institucional comercial sem mensagens de bastidor. Fotos com `object-fit: contain` e ajustes de enquadramento. Cache-busting dos CSS/JS.
 
-### Revisão manual antes de considerar aprovada
-1. **Desktop 1440×900:** rolar do vídeo para a faixa amarela, atravessar as cinco cenas horizontais e chegar à galeria sem saltos; testar setas, links e a explosão.
-2. **Notebook 1366×768:** verificar que títulos e botões cabem, nenhum conteúdo é cortado.
-3. **Celular 390×844 e 360×740:** arrastar lateralmente, verificar cards, navegação e botão fixo de pedido sem sobreposição.
-4. **Movimento reduzido:** conferir ausência de animações forçadas e controles utilizáveis.
-5. **Performance:** as imagens originais em PNG ainda totalizam mais de 20 MB. A otimização para WebP/AVIF **continua pendente** antes da publicação final.
+**Performance:** as dez imagens premium estão em PNG e somam mais de 20 MB. A conversão para WebP e variantes mobile ainda precisa ser publicada no repositório antes de mudar os caminhos das imagens. Não confundir verificação estática de código com auditoria real de navegação e performance.
 
-Não fazer merge na `main`, deploy, Pages ou troca de visibilidade sem nova autorização. As imagens ainda são recriações digitais publicitárias e precisam ser aprovadas pelo estabelecimento.
+**Pendências:** receber/validar o arquivo oficial transparente do logotipo, nomes e ingredientes, fotos oficiais e realizar validação visual desktop/mobile. Preservar `main`; somente `preview-v1` é fonte do Pages durante esta demonstração.
 
 ## Estado atual
 - Repositório **privado**, homepage conceitual em **preview-v1**.
 - Branch **main** preservada.
-- **Sem publicação, domínio, deploy ou GitHub Pages**.
+- **Com GitHub Pages publicado a partir de `preview-v1` e sem domínio próprio**.
 - Conteúdo comercial, fotos e identidade devem ser aprovados pelo proprietário antes de qualquer lançamento.
 
 ## Site
 Página estática sem dependências de build: abra `index.html` no navegador ou execute um servidor HTTP local.
 
-- Hero preparado para o vídeo Veo de 8 s (inicia sem som, pausa no quadro final e permite replay).
+- Hero com vídeo Veo de 8 s em loop mudo e automático (respeita redução de movimento).
 - Responsive desktop / tablet / mobile.
 - Compatibilidade com redução de movimento, skip link, foco visível e navegação mobile.
 - Links externos de Saipos, iFood, WhatsApp com texto de origem, Maps e Instagram.
@@ -45,14 +35,14 @@ Os dois arquivos foram enviados e confirmados na branch `preview-v1`:
 - `assets/allin-hero.mp4` — vídeo Veo otimizado para web (8 s, 1920×1080, cerca de 1,1 MB).
 - `assets/allin-poster.jpg` — capa extraída do quadro final.
 
-O HTML aponta para esses arquivos. É possível testar localmente abrindo `index.html` após baixar e extrair o repositório. O vídeo é reproduzido uma vez e pausa na cena final do combo, com opção de replay. A publicação continua desativada.
+O HTML aponta para esses arquivos. É possível testar localmente abrindo `index.html` após baixar e extrair o repositório. O vídeo se repete continuamente, exceto quando a preferência de movimento reduzido solicita apresentação estática. O Pages publica a branch `preview-v1`.
 
-## Verificações antes de uma futura publicação
+## Verificações antes da aprovação e de transformar a demonstração em site oficial
 1. Validar logo oficial, lanches reais, ingredientes, fotos, copy, horário e direitos de uso.
 2. Confirmar links e canais com o proprietário.
 3. Auditar mobile, desktop, vídeo, acessibilidade e performance.
 4. Retirar a tarja de prévia, o aviso não oficial e `noindex` **somente com aprovação**.
-5. Configurar domínio e deploy apenas após autorização explícita.
+5. Alterar domínio, configuração da hospedagem ou status de demonstração apenas após autorização explícita.
 
 ## Links de referência
 - Cardápio: https://allinclube.saipos.com/home
@@ -67,4 +57,4 @@ A vitrine da branch `preview-v1` utiliza as dez imagens `assets/*premium*.png` c
 
 As imagens são **recriações digitais publicitárias**, não fotos idênticas garantidas dos produtos. A identidade dos itens, ingredientes e direitos de uso precisam ser validados pelo proprietário antes de divulgação oficial.
 
-Recursos: filtros por categoria, seis cards iniciais, botão para expandir e CTAs direcionados à Saipos. Preços não são replicados localmente. Como os PNGs somam mais de 20 MB, **otimizar em WebP/AVIF é etapa pendente antes da publicação**. A branch `main` deve permanecer intacta, sem Pages e sem deploy até aprovação.
+Recursos: filtros por categoria, seis cards iniciais, botão para expandir e CTAs direcionados à Saipos. Preços não são replicados localmente. Como os PNGs somam mais de 20 MB, **otimizar em WebP/AVIF é etapa pendente antes do lançamento oficial**. A branch `main` deve permanecer intacta, sem alteração, preservada da branch demonstrativa.

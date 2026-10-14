@@ -91,7 +91,7 @@
       const top = section.getBoundingClientRect().top + window.scrollY;
       window.scrollTo({ top: top + offset, behavior: reducedMotion.matches ? 'auto' : 'smooth' });
     } else {
-      viewport.scrollTo({ left: offset, behavior: reducedMotion.matches ? 'instant' : 'smooth' });
+      viewport.scrollTo({ left: offset, behavior: reducedMotion.matches ? 'auto' : 'smooth' });
     }
   }
 
