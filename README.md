@@ -10,12 +10,12 @@
 
 **Refinamentos de 14/10/2026:** logo existente preservado e mostrado sobre composição preta com recorte visual circular para reduzir a aparência de fundo retangular; sem conversão permanente do PNG para transparência e sem alteração do arquivo original. Texto institucional comercial sem mensagens de bastidor. Fotos com `object-fit: contain` e ajustes de enquadramento. Cache-busting dos CSS/JS.
 
-**Performance:** as dez imagens premium estão em PNG e somam mais de 20 MB. A conversão para WebP e variantes mobile ainda precisa ser publicada no repositório antes de mudar os caminhos das imagens. Não confundir verificação estática de código com auditoria real de navegação e performance.
+**Performance:** a versão publicada agora usa 20 variantes WebP (10 produtos em 960 px para desktop e 640 px para mobile), conectadas por `srcset` e `sizes`; os PNGs originais continuam preservados. Comparação medida dos assets: 24.542.778 bytes em 10 PNGs originais, 1.653.312 bytes nos 10 WebP de desktop e 769.910 bytes nas 10 variantes mobile. Não confundir verificação estática de código com auditoria real de navegação e performance.
 
 **Pendências:** receber/validar o arquivo oficial transparente do logotipo, nomes e ingredientes, fotos oficiais e realizar validação visual desktop/mobile. Preservar `main`; somente `preview-v1` é fonte do Pages durante esta demonstração.
 
 ## Estado atual
-- Repositório **privado**, homepage conceitual em **preview-v1**.
+- Repositório **público** para viabilizar GitHub Pages no plano atual, homepage conceitual em **preview-v1**.
 - Branch **main** preservada.
 - **Com GitHub Pages publicado a partir de `preview-v1` e sem domínio próprio**.
 - Conteúdo comercial, fotos e identidade devem ser aprovados pelo proprietário antes de qualquer lançamento.
@@ -53,11 +53,11 @@ O HTML aponta para esses arquivos. É possível testar localmente abrindo `index
 
 ## Vitrine premium — 12 cards, dez imagens individuais
 
-A vitrine da branch `preview-v1` utiliza as dez imagens `assets/*premium*.png` carregadas pelo usuário, com uma foto associada a cada nome de produto. Distribuição: seis burgers (Lisboa, Moscou, Oslo, Santiago, Jerusalém, Bob Esponja), três dogs (Egito, França e prensadinho Suíça), dois combos (Santiago e Lisboa), uma promoção (Cabul). Os cards dos combos reutilizam a imagem do burger principal, com aviso explícito.
+A vitrine da branch `preview-v1` utiliza as dez imagens `assets/*premium*.webp` otimizadas a partir dos PNGs originais carregados pelo usuário, com uma foto associada a cada nome de produto. Distribuição: seis burgers (Lisboa, Moscou, Oslo, Santiago, Jerusalém, Bob Esponja), três dogs (Egito, França e prensadinho Suíça), dois combos (Santiago e Lisboa), uma promoção (Cabul). Os cards dos combos reutilizam a imagem do burger principal, com aviso explícito.
 
 As imagens são **recriações digitais publicitárias**, não fotos idênticas garantidas dos produtos. A identidade dos itens, ingredientes e direitos de uso precisam ser validados pelo proprietário antes de divulgação oficial.
 
-Recursos: filtros por categoria, seis cards iniciais, botão para expandir e CTAs direcionados à Saipos. Preços não são replicados localmente. Como os PNGs somam mais de 20 MB, **otimizar em WebP/AVIF é etapa pendente antes do lançamento oficial**. A branch `main` deve permanecer intacta, sem alteração, preservada da branch demonstrativa.
+Recursos: filtros por categoria, seis cards iniciais, botão para expandir e CTAs direcionados à Saipos. Preços não são replicados localmente. Os PNGs originais somam mais de 20 MB; as versões WebP responsivas já estão publicadas na `preview-v1`. Validar carregamento e aparência em navegadores reais antes do lançamento oficial. A branch `main` deve permanecer intacta, sem alteração, preservada da branch demonstrativa.
 
 ## WebP otimizado em 14/10/2026
 
