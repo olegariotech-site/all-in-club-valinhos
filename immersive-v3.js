@@ -99,9 +99,13 @@
   const visibleVideos = new Map(videos.map(video => [video, false]));
   function syncVideo(video) {
     const enabled = visibleVideos.get(video) && !document.hidden && !reduced.matches;
+    if (video.id === 'heroVideo') video.closest('.hero')?.classList.toggle('is-scene-visible', !!enabled);
     if (enabled) {
       if (video.dataset.src && !video.getAttribute('src')) { video.src = video.dataset.src; video.load(); }
-      if (video.getAttribute('src') || video.querySelector('source')) video.play().catch(() => {});
+      if (video.getAttribute('src') || video.querySelector('source')) video.play().catch(() => {
+        // Rejected autoplay keeps the poster; no empty or frozen foreground frame.
+        if (video === emberVideo) video.classList.remove('is-ready');
+      });
     } else video.pause();
   }
   const observer = new IntersectionObserver(entries => entries.forEach(entry => {
@@ -117,6 +121,8 @@
   videos.filter(video => video !== emberVideo).forEach(video => observer.observe(video));
   emberVideo.addEventListener('playing', () => emberVideo.classList.add('is-ready'));
   emberVideo.addEventListener('error', () => emberVideo.classList.remove('is-ready'));
+  emberVideo.addEventListener('stalled', () => { if (emberVideo.readyState < 2) emberVideo.classList.remove('is-ready'); });
+  emberVideo.addEventListener('emptied', () => emberVideo.classList.remove('is-ready'));
   function motionState() {
     videos.forEach(syncVideo);
     ember.classList.toggle('is-visible', emberVisible && !document.hidden && !reduced.matches);

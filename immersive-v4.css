@@ -1,0 +1,70 @@
+/* V4 reference lock: V2's broad moving scene + V3's editorial structure.
+   Edge dissolves, no image frames, no extra font/library, original hero video. */
+:root{--v4-canvas:#050505;--v4-glow:rgba(160,79,27,.14)}
+.hero{background:var(--v4-canvas);isolation:isolate}
+.hero-media{inset:0;z-index:-3;background:radial-gradient(ellipse at 72% 58%,#492e16 0%,#17110b 35%,#050505 76%)}
+.hero video{inset:0 auto 0 5%;width:124%;height:100%;max-width:none;object-fit:cover;object-position:center;background:transparent;filter:none;box-shadow:none;border:0;border-radius:0}
+.hero-shade{inset:0;z-index:-1;background:linear-gradient(90deg,#050505fa 0%,#050505dc 21%,#05050596 37%,#05050535 56%,transparent 78%),linear-gradient(0deg,#050505 0%,#05050580 10%,transparent 28%,transparent 80%,#05050577 100%)}
+.hero-visual-fallback{background:radial-gradient(ellipse at 73% 55%,#67401f55,transparent 62%),#050505}
+.hero-visual-fallback:after{display:none}
+.hero-atmosphere{position:absolute;inset:0;z-index:2;pointer-events:none;overflow:hidden;background:radial-gradient(ellipse 65% 45% at 76% 82%,#ab5b1712,transparent 80%)}
+.hero-haze{position:absolute;inset:32% -20% -13% 18%;background:radial-gradient(ellipse 50% 22% at 30% 48%,#d5b18a13,transparent 72%),radial-gradient(ellipse 55% 20% at 74% 67%,#e0b47616,transparent 76%);filter:blur(24px);animation:haze-drift 18s ease-in-out infinite alternate;animation-play-state:paused;transform-origin:center}
+@keyframes haze-drift{from{transform:translate3d(-2%,3%,0)}to{transform:translate3d(3%,-4%,0)}}
+.hero-glints{position:absolute;inset:25% 0 10% 36%;opacity:.6;background:radial-gradient(circle at 20% 67%,#ffc47b99 0 1px,transparent 2px),radial-gradient(circle at 62% 44%,#ffb96077 0 1px,transparent 2px),radial-gradient(circle at 82% 72%,#ffb96077 0 1px,transparent 2px),radial-gradient(circle at 75% 27%,#ffb96055 0 1px,transparent 2px);animation:hero-glow-drift 9s ease-in-out infinite;animation-play-state:paused}
+@keyframes hero-glow-drift{0%,100%{transform:translateY(8px);opacity:.15}50%{transform:translateY(-22px);opacity:.6}}
+.hero.is-scene-visible .hero-haze,.hero.is-scene-visible .hero-glints{animation-play-state:running}
+@media(min-width:961px){
+  .hero{min-height:calc(100svh - 32px)}
+  .hero-copy{width:46%;max-width:610px}
+  .hero h1{text-shadow:0 3px 25px #0007}
+}
+/* Dissolve the existing photographic backdrop, never cut the burger into parts. */
+.experience-panel:before{background:radial-gradient(ellipse 60% 70% at 74% 56%,#6e3b1a26,transparent 78%),linear-gradient(90deg,#050505,#0d0906 72%,#050505)}
+.experience-product:before{background:radial-gradient(ellipse,#b06d2d14,transparent 70%);filter:blur(35px)}
+.experience-image,.experience-panel--blast .experience-image,.experience-panel--blast.is-active .experience-image{filter:none!important;box-shadow:none;border:0;border-radius:0;mix-blend-mode:normal;object-fit:contain;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent),linear-gradient(0deg,transparent,#000 5%,#000 98%,transparent);
+  mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent),linear-gradient(0deg,transparent,#000 5%,#000 98%,transparent);
+  -webkit-mask-composite:source-in;mask-composite:intersect;
+}
+.experience-product:after{box-shadow:none!important}
+.experience-panel--blast .experience-product:after{background:radial-gradient(ellipse,#d2782710,transparent 70%)}
+.experience-ambient{background:radial-gradient(ellipse at 60% 55%,#b2692814,transparent 70%)}
+/* Black/amber atmosphere continues into the live ember scene and menu. */
+.yellow-tape{padding-block:12px;box-shadow:0 16px 42px #0009}
+.yellow-tape .tape-inner span{font-size:20px}
+.ember-section{min-height:clamp(460px,70svh,760px);background:#050505}
+.ember-media{inset:0}
+.ember-poster,.ember-video{object-fit:cover;object-position:65% 50%;background:#050505}
+.ember-section:after{background:linear-gradient(90deg,#050505df,#05050570 38%,transparent 78%),linear-gradient(0deg,#050505 0%,transparent 28%,transparent 72%,#050505 100%)}
+.ember-copy{padding-block:92px}
+.ember-sparks{opacity:.45}
+#favoritos{background:radial-gradient(ellipse 65% 500px at 90% 0%,#a9571510,transparent 80%)}
+@media(max-width:960px){
+  .hero-media{inset:76px -8% auto;height:clamp(320px,78vw,500px)}
+  .hero video{inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+  .hero-shade{background:linear-gradient(180deg,#05050599 0%,transparent 14%,#05050508 32%,#05050575 43%,#050505 56%),linear-gradient(90deg,#05050550,transparent 28%,transparent 78%,#05050533)}
+  .hero-atmosphere{inset:0;background:none}.hero-haze{inset:35% -10% 0}
+  .hero-glints{inset:10% 5% 10% 15%}
+  .hero-content{padding-top:clamp(345px,76vw,485px);padding-bottom:112px}
+  .hero-copy{max-width:640px}
+  .hero .eyebrow{letter-spacing:.1em}
+  .ember-copy{padding-block:78px}
+  .ember-section{min-height:500px}
+}
+@media(min-width:761px) and (max-width:960px) and (orientation:portrait){
+  .hero-media{inset:84px -8% auto;height:clamp(390px,48svh,530px)}
+  .hero-content{padding-top:clamp(440px,48svh,520px);padding-bottom:120px}
+  .hero-shade{background:linear-gradient(180deg,#05050599 0%,transparent 13%,transparent 33%,#050505a0 46%,#050505 57%)}
+}
+@media(max-width:520px){
+  .hero-media{inset:72px -8% auto;height:clamp(300px,82vw,360px)}
+  .hero-content{padding-top:clamp(338px,84vw,365px);padding-bottom:112px}
+  .hero-shade{background:linear-gradient(180deg,#05050577,transparent 12%,transparent 28%,#05050577 38%,#050505 49%)}
+  .hero-sub{max-width:35ch}
+  .ember-section{min-height:450px}.ember-copy{padding-block:68px}
+}
+@media(prefers-reduced-motion:reduce){
+  .hero-haze,.hero-glints{animation:none!important}
+  .hero-glints{opacity:.18}
+  .ember-video{display:none}.ember-sparks{display:none}
+}
