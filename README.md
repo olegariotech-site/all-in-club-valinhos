@@ -40,7 +40,7 @@ Nomes, categorias, imagens e links originais preservados. Não há preços ou in
 
 Página estática sem build e sem dependências de produção. Checagens estáticas aprovadas: sintaxe JS, referências locais e âncoras, IDs únicos, 12 nomes/imagens originais, categorias, links externos preservados, cinco cenas, noindex, atributos do vídeo e ausência de grade duplicada. MP4 decodificado integralmente por FFmpeg sem erro.
 
-A validação V3 havia usado Chromium 1363 × 936. Esse registro não comprova a V4 nem a matriz mobile/tablet: os resultados da V4 serão registrados abaixo após a publicação e teste. Não confundir inspeção de código ou testes com DOM simulado com homologação visual.
+Não confundir inspeção de código ou testes com DOM simulado com homologação visual. Resultados V4 abaixo.
 
 ## Canais oficiais preservados
 
@@ -50,3 +50,15 @@ A validação V3 havia usado Chromium 1363 × 936. Esse registro não comprova a
 - Instagram: https://www.instagram.com/allin.club_valinhos/
 - Maps: https://maps.app.goo.gl/zZRdNen1wt4B3zmK8
 - Linktree: https://linktr.ee/allinclubvalinhos
+
+### Resultados V4 na prévia publicada
+
+- Chrome/Chromium, viewport real 1363 × 936. Hero com mídia ocupando toda a área (1348 × 904 de área útil), `cover`, reprodução ativa e `readyState=4`; copy, header e CTAs visíveis na primeira dobra. Captura comprova a composição ampla. Sem overflow horizontal (documento 1348 px, janela 1363 px).
+- Experiência: sombras removidas (`filter:none`), imagem quadrada dimensionada ao conteúdo e máscaras graduais nas bordas; captura da primeira cena sem moldura dura. Estrutura e controles preservados.
+- Brasa: MP4 servido pelo próprio Pages em `/assets/allin-embers.mp4`, duração 7 s, `readyState=4`, reprodução ativa, opacidade 1 e avanço de tempo observado em duas amostras. `loop` e `muted` ativos. Hero pausado quando a brasa está em visão; brasa pausada ao navegar ao cardápio. Poster carregado em 1280 px.
+- Cardápio: todos os filtros exercitados, com contagens 3 dogs, 2 combos, 1 promoção, 6 burgers e 12 totais. Seleção de Moscou e ArrowDown resultou em Oslo, com nome/foto/produto ativo concordando após o carregamento. Os links oficiais foram comparados com a base preservada; nenhum pedido foi efetuado.
+- Testes isolados com DOM simulado: categorias, seleção mantida ao filtrar, corrida de imagens com cliques rápidos, teclado, mensagem de combo, pausa em aba oculta/movimento reduzido, carregamento diferido do MP4 e retorno ao poster em erro/stall aprovados. Não simulam o layout nem uma falha de rede em navegador real.
+- MP4 integralmente decodificado por FFmpeg; frames em 1 s e 3 s com hashes diferentes comprovam conteúdo em movimento.
+- Nenhuma alteração na branch `main`; head de referência `f13699a8de38e1867d5d465e058c4413d1a4380b`. Nenhuma mudança em hospedagem ou visibilidade.
+
+**Limitações reais:** mobile e tablet vertical receberam CSS específico, mas ainda não têm homologação visual nesta etapa. A tentativa de provisionar Chromium/WebKit locais falhou por download de arquivo vazio/incompleto. Cloud Browser não oferece emulação/redimensionamento nesta sessão. WebKit, matriz de oito resoluções, preferência de movimento reduzido em navegador real e falha de rede real continuam não validados. Console do Chrome contém mensagens de erro da extensão do ambiente, sem erro do código da página observado. A V4 aguarda aprovação visual do cliente/OT.

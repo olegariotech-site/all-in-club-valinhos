@@ -73,3 +73,5 @@
   -webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent),linear-gradient(0deg,transparent,#000 6%,#000 94%,transparent);
   mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent),linear-gradient(0deg,transparent,#000 6%,#000 94%,transparent);
 }
+/* Keep the menu canvas continuous with the full-width ember scene. */
+#favoritos{background:none}
