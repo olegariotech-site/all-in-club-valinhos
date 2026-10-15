@@ -75,6 +75,7 @@
     section.classList.toggle('experience--pinned', pinned);
     section.style.height = '';
     track.style.transform = '';
+    section.style.setProperty('--scene-width', viewport.clientWidth + 'px');
     travel = Math.max(0, track.scrollWidth - viewport.clientWidth);
     if (pinned) {
       const vh = window.innerHeight;

@@ -91,3 +91,11 @@ O Higgsfield recusou a geração por exigir plano Plus ou superior. **Nenhum MP4
 - `README.md`: registro técnico e pendências.
 
 Testes estáticos: sintaxe JS, referências locais/âncoras, IDs únicos, 12 produtos e distribuição 6/3/2/1, nomes/imagens/links originais, cinco cenas, atributos do vídeo, noindex e ausência da grade duplicada. Esses testes **não equivalem a homologação visual**. Os oito tamanhos solicitados e WebKit dependem de ambiente que ofereça redimensionamento/emulação; não declarar validação dessa matriz sem evidência de navegador.
+
+### Verificação da prévia publicada
+
+Chromium via Cloud Browser, viewport real 1363 × 936. Primeira dobra com header, título, vídeo e CTAs visíveis; `object-fit: contain` e vídeo reproduzindo (`readyState=4`). Acento É legível na captura. Sem overflow horizontal medido (documento 1348 px incluindo área útil, janela 1363 px). Menu: Hot dogs retorna os três nomes e fotos corretos; seleção por clique e ArrowDown chega a Prensadinho Suíça; foto carregada, nome e produto ativo concordam. Navegação da cena inicial para Lisboa: track deslocado e elevação de -9 px confirmados no DOM. Poster da brasa carregado em 1600 px, seção ativa e vídeo hero pausado fora de visão; nenhum MP4 ausente solicitado. Logo original carregado, filtro de cor `none`. Console com erros da extensão do navegador, sem erro do código da página observado.
+
+Teste isolado de lógica adicional: filtros, manutenção da seleção, resposta à navegação por teclado, corrida de carregamentos com cliques rápidos, aviso de combo e pausa do vídeo sob movimento reduzido/aba oculta aprovados. Este teste usa DOM simulado e não comprova layout mobile. Redução de movimento em mobile usa fluxo normal de documento para evitar sobreposição entre copy e foto.
+
+**Ainda não homologado:** desktop 1920 × 1080, 1440 × 900, 1366 × 768 e 1280 × 720; tablet 768 × 1024; celulares 360 × 740, 390 × 844 e 412 × 915; WebKit; preferência de movimento reduzido em navegador real. Ambiente sem redimensionamento/emulação e sem binários locais Chromium/WebKit. Capturas fornecidas são apenas do tamanho real informado. Links externos foram preservados/inspecionados; não foi realizado pedido nem auditoria da disponibilidade de cada canal externo. A V3 aguarda revisão visual do proprietário/OT.

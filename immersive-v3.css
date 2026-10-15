@@ -107,3 +107,13 @@
 .burst-spark{animation-play-state:paused}
 .experience-panel.is-active .burst-spark{animation-play-state:running}
 @media(prefers-reduced-motion:reduce){.story-art.logo-revealed .story-logo-lockup{animation:none!important}}
+/* Reduced motion uses normal document flow, so tall copy never overlaps food. */
+@media(prefers-reduced-motion:reduce) and (max-width:960px){
+  .experience-panel{min-height:0}
+  .experience-interior{height:auto;min-height:0;display:flex;padding:48px 0;gap:24px}
+  .experience-copy{max-width:100%}
+  .experience-product,.experience-panel--intro .experience-product{position:relative;inset:auto;transform:none!important;width:min(100%,480px);height:clamp(240px,42vw,390px);align-self:center}
+}
+
+.experience-panel{width:var(--scene-width,100vw);flex-basis:var(--scene-width,100vw)}
+@media(prefers-reduced-motion:reduce){.experience-panel{width:100%}}
