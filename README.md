@@ -2,11 +2,11 @@
 
 **Olegario Tech® | Proposta visual demonstrativa, sem vínculo formal com o estabelecimento.**
 
-## Immersive V2 — demonstração pública e refinamento visual
+## Immersive V3 — experiência cinematográfica e cardápio interativo
 
 **Publicado:** GitHub Pages em `https://olegariotech-site.github.io/all-in-club-valinhos/`, branch `preview-v1`, pasta `/ (root)`. Esta configuração foi confirmada pelas capturas do painel Pages e por execuções de deploy concluídas no GitHub Actions. O site é uma **proposta independente não oficial**, com `noindex`, e o proprietário ainda precisa aprovar identidade, fotos e descrições.
 
-**Experiência:** hero com vídeo Veo original em `autoplay muted loop playsinline` (estático em dispositivos com preferência por movimento reduzido), galeria horizontal em cinco cenas, burger Santiago inteiro com luz âmbar e partículas moderadas, vitrine editorial com doze itens e filtros por categoria.
+**Experiência V3:** hero com vídeo Veo original inteiro e composição para notebook; título com acento sem sobreposição; cinco cenas existentes com elevação sutil do produto e narrativa de desejo, atmosfera e escolha; transição de brasa original com poster estático e faíscas; cardápio editorial com 12 entradas, filtros e foto de destaque; logo original sobre preto. Movimento reduzido transforma as cenas em sequência vertical estática e pausa vídeos. Não há informação local de preços ou ingredientes não confirmados.
 
 **Refinamentos de 14/10/2026:** logo existente preservado e mostrado sobre composição preta com recorte visual circular para reduzir a aparência de fundo retangular; sem conversão permanente do PNG para transparência e sem alteração do arquivo original. Texto institucional comercial sem mensagens de bastidor. Fotos com `object-fit: contain` e ajustes de enquadramento. Cache-busting dos CSS/JS.
 
@@ -62,3 +62,32 @@ Recursos: filtros por categoria, seis cards iniciais, botão para expandir e CTA
 ## WebP otimizado em 14/10/2026
 
 20 variantes WebP (10 produtos x 960/640 px), com arquivos PNG originais preservados. HTML utiliza srcset e sizes; hero vídeo, logo e demais assets mantidos intactos. Conversão executada na branch preview-v1 com Pillow, qualidade 85/82. O carregamento deve ser revalidado em navegador real. Imagens conceituais dependem de aprovação do proprietário.
+
+## Implementação V3 em 15/10/2026
+
+Sequência final: hero → faixa All In → experiência em cinco cenas → atmosfera de brasa → cardápio editorial → canais de pedido → marca → localização → Instagram → rodapé. `main`, configurações Pages, domínio, visibilidade, `robots.txt`, noindex e aviso não oficial preservados.
+
+### Decisões de direção
+
+- Fonte principal, amarelo `#ffdb24` e canvas `#050505`: identidade existente e briefing aprovado.
+- Produto inteiro: vídeo em `contain`, fotos responsivas originais, elevação até 9 px vinculada à passagem da cena.
+- Menu: lista à esquerda e destaque estável à direita no desktop; lista vertical com seleção e foto abaixo em tablet/mobile. Uma única vitrine; seleção e link de consulta independentes. Enter/Espaço selecionam; setas, Home e End percorrem itens visíveis. Filtros mantêm o destaque se ele ainda pertence à categoria. Seleções rápidas descartam carregamentos anteriores para não mostrar uma foto errada. Sem JS todos os nomes e links oficiais permanecem acessíveis.
+- Brasa: imagem original feita com Image Gen, convertida em WebP 1600 × 900, faíscas discretas ativas apenas quando a seção está visível. Âmbar/cobre são iluminação; nenhuma afirmação sobre o método de preparo.
+- Refero consultado, mas pesquisa bloqueada por assinatura inativa; direção amarrada ao briefing e à base aprovada, com a referência de motion da skill.
+
+### Mídia de brasa
+
+`assets/allin-embers-poster.webp` é o fallback original. Prompt: macro cinematográfico de carvão incandescente na parte inferior/direita, preto na área superior/esquerda, âmbar/cobre/vermelho profundo, poucas faíscas, chama pequena, sem textos, pessoas, marcas ou alimentos.
+
+O Higgsfield recusou a geração por exigir plano Plus ou superior. **Nenhum MP4 de brasa foi criado.** Fornecer `assets/allin-embers.mp4`, H.264/yuv420p, 16:9, 5–8 s, mudo, loop contínuo, recomendado até 2 MB. Para ativar, adicionar `data-src="assets/allin-embers.mp4"` à `.ember-video` em `index.html`. O arquivo só será solicitado quando a seção entrar em visão, sem movimento reduzido. Poster permanece se houver erro. Não existe requisição a MP4 inexistente.
+
+### Arquivos V3
+
+- `index.html`: composição, narrativa, brasa, lista editorial e CTAs.
+- `immersive-v3.css`: camada responsiva V3 e movimento reduzido.
+- `immersive-v3.js`: seleção, filtros, teclado, poster/vídeo sob demanda e pausa fora de visão.
+- `immersive-v2.js`: elevação do produto vinculada à cena e mudança de preferência de movimento.
+- `assets/allin-embers-poster.webp`: novo asset original; imagens e vídeo anteriores preservados.
+- `README.md`: registro técnico e pendências.
+
+Testes estáticos: sintaxe JS, referências locais/âncoras, IDs únicos, 12 produtos e distribuição 6/3/2/1, nomes/imagens/links originais, cinco cenas, atributos do vídeo, noindex e ausência da grade duplicada. Esses testes **não equivalem a homologação visual**. Os oito tamanhos solicitados e WebKit dependem de ambiente que ofereça redimensionamento/emulação; não declarar validação dessa matriz sem evidência de navegador.

@@ -32,6 +32,8 @@
     const index = indexFor(offset);
     currentIndex = index;
     panels.forEach((panel, i) => {
+      const distance = Math.abs(offset / Math.max(1, viewport.clientWidth) - i);
+      panel.querySelector('.experience-product')?.style.setProperty('--product-lift', reducedMotion.matches ? '0px' : (-Math.max(0, 1 - distance) * 9).toFixed(1) + 'px');
       panel.classList.toggle('is-active', i === currentIndex);
       // Keeps off-screen scenes outside keyboard tab order while pinned.
       panel.inert = pinned && i !== currentIndex;
@@ -115,6 +117,7 @@
     });
   }, { passive: true });
   motionQuery.addEventListener?.('change', configure);
+  reducedMotion.addEventListener?.('change', configure);
 
   // Decorative gold sparks belong to the burger scene, never to the food description.
   const sparks = blast?.querySelector('.experience-burst');
@@ -122,6 +125,7 @@
     for (let i = 0; i < 18; i += 1) {
       const dot = document.createElement('span');
       dot.className = 'burst-spark';
+      dot.style.setProperty('--spark-index', String(i));
       dot.setAttribute('aria-hidden', 'true');
       dot.style.setProperty('--rot', (i * 137.5078) + 'deg');
       dot.style.setProperty('--dist', (48 + i % 6 * 13) + 'px');
