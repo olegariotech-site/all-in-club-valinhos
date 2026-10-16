@@ -1,4 +1,4 @@
-# All In Club Valinhos — Immersive V4.1
+# All In Club Valinhos — Immersive V4.2
 
 **Olegario Tech® | Proposta demonstrativa independente, não oficial.**
 
@@ -71,3 +71,35 @@ Correção limitada ao Lisboa e ao logo institucional, guiada pelos três prints
 - Logo: PNG original intacto, cores sem filtros, escala menor e margem de segurança responsiva. O antigo círculo que cortava o emblema foi substituído por contorno CSS expandido a partir da borda externa da arte original; a região removida corresponde ao fundo branco externo. A análise do contorno confirma todos os pixels escuros/coloridos da arte dentro da região, com margem; o arquivo original não foi editado nem regravado.
 - Arquivos de código: `index.html`, `immersive-v3.js`, `immersive-v4.css`; documentação neste README e dois WebP adicionais.
 - Verificação estática: todos os 12 nomes/categorias e links comparados com a V4; hero, brasa, noindex e originais preservados; alpha dos novos WebP confirmado. Isso não substitui teste visual de responsividade.
+
+
+## Refinamento V4.2 em 16/10/2026
+
+Três correções de acabamento, sem troca de hospedagem ou dos arquivos originais de vídeo/logo:
+
+- CTA da última cena: corte reproduzido na V4.1 em 1600 × 734 e 1366 × 620. A altura passa a considerar a copy real, CTA e padding; o cálculo se repete após o carregamento das fontes e ao redimensionar. Telas sem altura para pinning usam a galeria horizontal nativa existente, com espaço vertical para todo o conteúdo. Títulos de encerramento/impacto respeitam também a altura disponível. No touch, a última cena mantém o produto abaixo da copy, sem a antiga translação de meia largura.
+- Brasa: mídia ampliada além da área de leitura e dissolvida em cima/baixo, com gradientes sobre o mesmo carvão #050505. O reflexo/mesa da última cena também dissolve antes da junção; não há margem negativa que cubra o CTA. MP4, poster e lógica de reprodução/fallback mantidos.
+- Marca: lockup limitado a 320 px no desktop, margem real de aproximadamente 105–109 px nos viewports desktop testados e 56 px no mobile de 390–393 px. Removida a translação de entrada para manter o centro estável. PNG original, cores e contorno externo de segurança da V4.1 preservados.
+
+### Verificação V4.2
+
+Fluxo: última cena → CTA integral → passagem para a brasa em vídeo → cardápio/filtros/teclado → logo com área segura.
+
+Chromium 153 com Playwright local (Browser plugin não disponível), screenshots e medidas reais de layout:
+
+| Perfil | Viewport CSS | CTA, transição e logo |
+| --- | --- | --- |
+| Desktop amplo | 1920 × 1080 | Aprovados |
+| Notebook | 1366 × 768 | Aprovados |
+| Tablet vertical | 768 × 1024 | Aprovados |
+| Android equivalente | 393 × 873 | Aprovados |
+| iPhone equivalente | 390 × 844 | Aprovados |
+| Tela ampla baixa | 1600 × 734 | Aprovados |
+| Notebook baixo | 1366 × 620 | Aprovados |
+| Mobile menor | 360 × 640 | Aprovados |
+
+Sem overflow horizontal; CTA dentro da cena e sem ancestral cortando suas bordas; logo centralizado com margem em todos os lados. Nos cinco perfis principais, filtros 12/6/3/2/1, clique Moscou → ArrowDown Oslo, Combo Lisboa transparente e botão de próxima cena exercitados no navegador, sem erro de aplicação observado. Vídeo com readyState 4 e reprodução ativa; pausa fora de visão confirmada. MP4 bloqueado deliberadamente em navegador real: poster 1280 px carregado, sem vídeo vazio sobreposto (erro de rede esperado nesse cenário).
+
+Testes isolados anteriores do cardápio/gestão de mídia e checks de sintaxe/diff continuam aprovados. Links, nomes/categorias, noindex, hero MP4, brasa MP4 e PNG do logo comparados com a base; sem alterações. Sem dependência de produção adicionada. Fontes Barlow Condensed e DM Sans fornecidas localmente apenas no ambiente de QA para contornar o acesso de rede; a página publicada continua usando as fontes Google aprovadas.
+
+Limites: Android/iPhone são emulações de viewport/toque em Chromium, não testes em aparelhos físicos nem no motor Safari/WebKit. A matriz é local; conferência da publicação deve ser distinguida dessas capturas. Resultados históricos V4/V4.1 acima permanecem como registro, sem invalidar a matriz nova.

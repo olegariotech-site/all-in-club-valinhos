@@ -88,3 +88,65 @@
 .menu-spotlight.is-lisboa .menu-image-stage{background:none;overflow:visible}
 .menu-spotlight.is-lisboa #menuImage{padding:clamp(8px,1.8vw,22px);filter:none;box-shadow:none;-webkit-mask-image:none;mask-image:none;object-fit:contain}
 .experience-image--lisboa{filter:none!important;-webkit-mask-image:none!important;mask-image:none!important;mix-blend-mode:normal}
+
+
+/* V4.2: safe scene sizing, a continuous charcoal canvas and more space for the brand. */
+.experience-sticky{height:var(--scene-height,100svh)}
+.experience-panel{height:100%;min-height:0;max-height:none}
+.experience-viewport,.experience-track{height:100%}
+.experience-panel:before{background:radial-gradient(ellipse 65% 62% at 72% 45%,#683b1b20,transparent 80%),#050505}
+.experience-panel:after{background:linear-gradient(90deg,#05050566,transparent 45%),linear-gradient(0deg,#050505 0%,#05050588 8%,transparent 28%)}
+.experience-oversize{-webkit-mask-image:linear-gradient(0deg,transparent,#000 48%);mask-image:linear-gradient(0deg,transparent,#000 48%)}
+.experience-panel--last .experience-image{
+  -webkit-mask-image:linear-gradient(0deg,transparent 1%,#000 23%,#000 87%,transparent),linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);
+  mask-image:linear-gradient(0deg,transparent 1%,#000 23%,#000 87%,transparent),linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);
+  -webkit-mask-composite:source-in;mask-composite:intersect;
+}
+@media(min-width:961px){
+  .experience-interior{padding-block:76px 112px}
+  .experience-title--closing{font-size:clamp(64px,min(8.2vw,13svh),128px)}
+  .experience-panel--blast .experience-title{font-size:clamp(64px,min(8.4vw,13svh),132px)}
+  .experience-product{height:min(74svh,calc(var(--scene-height,100svh) - 160px))}
+}
+.experience-action{flex-shrink:0;scroll-margin-block:32px}
+/* No shared negative margin: the CTA stays in its scene, with the seam fading to charcoal. */
+.ember-section{min-height:clamp(560px,82svh,920px);background:#050505}
+.ember-media{inset:-6% -10%;-webkit-mask-image:linear-gradient(0deg,transparent,#000 26%,#000 65%,transparent);mask-image:linear-gradient(0deg,transparent,#000 26%,#000 65%,transparent)}
+.ember-poster,.ember-video{object-position:67% 54%;background:transparent}
+.ember-section:before{content:"";position:absolute;inset:0;z-index:-2;pointer-events:none;background:radial-gradient(ellipse 75% 65% at 74% 53%,#8d491815,transparent 78%)}
+.ember-section:after{background:linear-gradient(90deg,#050505e8,#05050590 35%,#05050518 80%),linear-gradient(0deg,#050505 0%,transparent 28%,transparent 68%,#050505 100%)}
+.ember-copy{padding-block:110px}
+/* The source PNG is retained. A smaller lockup sits inside a generous, unclipped safe area. */
+.story-art{padding:clamp(58px,7vw,96px);border-color:#ffdb241c;overflow:visible}
+.story-logo-lockup{width:100%;max-width:320px;position:relative;overflow:visible}
+.story-logo{width:100%;max-width:none;max-height:none;object-fit:contain;transform:none}
+.story-art.logo-revealed .story-logo-lockup{animation:none}
+@media(max-width:960px){
+  .experience-sticky{min-height:0}
+  .experience-panel{height:100%;min-height:0;max-height:none}
+  .ember-media{inset:-4% -30%}
+  .ember-section{min-height:560px}
+  .ember-copy{padding-block:90px}
+  .story-art{padding:clamp(50px,8vw,76px)}
+  .story-logo-lockup{max-width:300px}
+}
+@media(max-width:520px){
+  .ember-media{inset:-3% -45%}
+  .ember-section{min-height:540px}
+  .ember-copy{padding-block:84px}
+  .ember-copy h2{font-size:clamp(50px,13vw,64px)}
+  .story-art{padding:clamp(52px,14vw,70px)}
+  .story-logo-lockup{max-width:260px}
+}
+@media(prefers-reduced-motion:reduce){
+  .experience-sticky,.experience-viewport,.experience-track{height:auto!important}
+  .experience-panel{height:auto;min-height:620px}
+}
+
+/* Keep the closing CTA above the food on touch layouts; no translated half-width product. */
+@media(max-width:960px){
+  .experience-panel--last .experience-interior{display:flex;flex-direction:column;justify-content:flex-start;padding-block:64px 104px;gap:24px}
+  .experience-panel--last .experience-copy{flex-shrink:0;max-width:100%}
+  .experience-panel--last .experience-product{position:relative;inset:auto;transform:none!important;flex:1;min-height:180px;height:180px;width:min(100%,420px);align-self:center;opacity:1}
+  .experience-panel--last .experience-image{position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;object-fit:contain}
+}

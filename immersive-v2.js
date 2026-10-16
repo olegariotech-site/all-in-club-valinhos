@@ -71,7 +71,25 @@
   }
 
   function configure() {
-    pinned = motionQuery.matches;
+    // Reserve the copy's real height, including its CTA and vertical breathing room.
+    // A scene taller than the screen uses the existing native gallery instead of
+    // pinning an oversized viewport and hiding the end of the composition.
+    const requiredHeight = Math.ceil(Math.max(...panels.map(panel => {
+      const interior = panel.querySelector('.experience-interior');
+      const style = getComputedStyle(interior);
+      let height = panel.querySelector('.experience-copy').offsetHeight
+        + parseFloat(style.paddingTop) + parseFloat(style.paddingBottom);
+      const product = panel.querySelector('.experience-product');
+      if (window.innerWidth <= 960 && panel.classList.contains('experience-panel--last')) {
+        height += (parseFloat(getComputedStyle(product).minHeight) || 0) + (parseFloat(style.rowGap) || 0);
+      }
+      return height;
+    })));
+    const baseHeight = window.innerWidth > 960 ? Math.max(620, window.innerHeight)
+      : Math.max(650, Math.min(850, window.innerHeight));
+    const sceneHeight = Math.max(baseHeight, requiredHeight);
+    section.style.setProperty('--scene-height', sceneHeight + 'px');
+    pinned = motionQuery.matches && sceneHeight <= window.innerHeight;
     section.classList.toggle('experience--pinned', pinned);
     section.style.height = '';
     track.style.transform = '';
@@ -151,4 +169,5 @@
   }
   configure();
   window.addEventListener('load', configure, { once: true });
+  document.fonts?.ready.then(configure);
 })();
