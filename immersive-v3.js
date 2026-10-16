@@ -31,6 +31,7 @@
       return;
     }
     if (version !== selectionVersion) return;
+    spotlight.classList.toggle('is-lisboa', row.dataset.name === 'Lisboa Burger' || row.dataset.name === 'Combo Lisboa');
     image.srcset = row.dataset.srcset;
     image.src = row.dataset.image;
     image.alt = 'Representação publicitária digital de ' + row.dataset.name;

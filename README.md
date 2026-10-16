@@ -1,4 +1,4 @@
-# All In Club Valinhos — Immersive V4
+# All In Club Valinhos — Immersive V4.1
 
 **Olegario Tech® | Proposta demonstrativa independente, não oficial.**
 
@@ -62,3 +62,12 @@ Não confundir inspeção de código ou testes com DOM simulado com homologaçã
 - Nenhuma alteração na branch `main`; head de referência `f13699a8de38e1867d5d465e058c4413d1a4380b`. Nenhuma mudança em hospedagem ou visibilidade.
 
 **Limitações reais:** mobile e tablet vertical receberam CSS específico, mas ainda não têm homologação visual nesta etapa. A tentativa de provisionar Chromium/WebKit locais falhou por download de arquivo vazio/incompleto. Cloud Browser não oferece emulação/redimensionamento nesta sessão. WebKit, matriz de oito resoluções, preferência de movimento reduzido em navegador real e falha de rede real continuam não validados. Console do Chrome contém mensagens de erro da extensão do ambiente, sem erro do código da página observado. A V4 aguarda aprovação visual do cliente/OT.
+
+## Refinamento V4.1 em 16/10/2026
+
+Correção limitada ao Lisboa e ao logo institucional, guiada pelos três prints do usuário. Estrutura da V4, hero, brasa, filtros, contagens, CTAs e URLs preservados.
+
+- Lisboa: derivada com alpha transparente produzida por edição de remoção de fundo a partir da foto original, sem mesa/reflexo ou fundo fotográfico. Novos `assets/allin-lisboa-cutout.webp` (960) e `assets/allin-lisboa-cutout-640.webp` (640). Foto original preservada. Destaque e Combo Lisboa usam a derivada responsiva; na cena Lisboa, a derivada não recebe máscara que apague bordas do alimento. No destaque do cardápio, `is-lisboa` remove a superfície de foto apenas nesses itens; filtros e carregamento assíncrono mantêm a lógica anterior.
+- Logo: PNG original intacto, cores sem filtros, escala menor e margem de segurança responsiva. O antigo círculo que cortava o emblema foi substituído por contorno CSS expandido a partir da borda externa da arte original; a região removida corresponde ao fundo branco externo. A análise do contorno confirma todos os pixels escuros/coloridos da arte dentro da região, com margem; o arquivo original não foi editado nem regravado.
+- Arquivos de código: `index.html`, `immersive-v3.js`, `immersive-v4.css`; documentação neste README e dois WebP adicionais.
+- Verificação estática: todos os 12 nomes/categorias e links comparados com a V4; hero, brasa, noindex e originais preservados; alpha dos novos WebP confirmado. Isso não substitui teste visual de responsividade.
